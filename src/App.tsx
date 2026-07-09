@@ -9,6 +9,17 @@ import ColorConverter from './pages/ColorConverter'
 import TextDiff from './pages/TextDiff'
 import RegexTester from './pages/RegexTester'
 import PasswordGen from './pages/PasswordGen'
+import WordCount from './pages/WordCount'
+import CaseConverter from './pages/CaseConverter'
+import TextReverse from './pages/TextReverse'
+import RemoveEmptyLines from './pages/RemoveEmptyLines'
+import TextReplace from './pages/TextReplace'
+import NumberBase from './pages/NumberBase'
+import RandomNumber from './pages/RandomNumber'
+import HashGenerator from './pages/HashGenerator'
+import QRCode from './pages/QRCode'
+import MarkdownPreview from './pages/MarkdownPreview'
+import UnitConverter from './pages/UnitConverter'
 
 export default function App() {
   return (
@@ -23,6 +34,17 @@ export default function App() {
         <Route path="/diff" element={<TextDiff />} />
         <Route path="/regex" element={<RegexTester />} />
         <Route path="/password" element={<PasswordGen />} />
+        <Route path="/wordcount" element={<WordCount />} />
+        <Route path="/case" element={<CaseConverter />} />
+        <Route path="/textreverse" element={<TextReverse />} />
+        <Route path="/removeempty" element={<RemoveEmptyLines />} />
+        <Route path="/textreplace" element={<TextReplace />} />
+        <Route path="/numberbase" element={<NumberBase />} />
+        <Route path="/random" element={<RandomNumber />} />
+        <Route path="/hash" element={<HashGenerator />} />
+        <Route path="/qrcode" element={<QRCode />} />
+        <Route path="/markdown" element={<MarkdownPreview />} />
+        <Route path="/unit" element={<UnitConverter />} />
       </Route>
     </Routes>
   )

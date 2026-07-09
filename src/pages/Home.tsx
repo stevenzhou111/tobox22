@@ -4,12 +4,23 @@ import { useTranslation } from 'react-i18next'
 const tools = [
   { path: '/json', icon: '{ }', labelKey: 'json.title', descKey: 'json.desc', color: 'bg-amber-50 text-amber-600' },
   { path: '/base64', icon: 'B64', labelKey: 'base64.title', descKey: 'base64.desc', color: 'bg-green-50 text-green-600' },
-  { path: '/url', icon: '🔗', labelKey: 'url.title', descKey: 'url.desc', color: 'bg-blue-50 text-blue-600' },
-  { path: '/timestamp', icon: '⏱', labelKey: 'timestamp.title', descKey: 'timestamp.desc', color: 'bg-purple-50 text-purple-600' },
-  { path: '/color', icon: '🎨', labelKey: 'color.title', descKey: 'color.desc', color: 'bg-pink-50 text-pink-600' },
-  { path: '/diff', icon: '⇔', labelKey: 'diff.title', descKey: 'diff.desc', color: 'bg-cyan-50 text-cyan-600' },
+  { path: '/url', icon: '%', labelKey: 'url.title', descKey: 'url.desc', color: 'bg-blue-50 text-blue-600' },
+  { path: '/timestamp', icon: '#', labelKey: 'timestamp.title', descKey: 'timestamp.desc', color: 'bg-purple-50 text-purple-600' },
+  { path: '/color', icon: 'C', labelKey: 'color.title', descKey: 'color.desc', color: 'bg-pink-50 text-pink-600' },
+  { path: '/diff', icon: '<>', labelKey: 'diff.title', descKey: 'diff.desc', color: 'bg-cyan-50 text-cyan-600' },
   { path: '/regex', icon: '.*', labelKey: 'regex.title', descKey: 'regex.desc', color: 'bg-indigo-50 text-indigo-600' },
-  { path: '/password', icon: '🔑', labelKey: 'password.title', descKey: 'password.desc', color: 'bg-red-50 text-red-600' },
+  { path: '/password', icon: 'P', labelKey: 'password.title', descKey: 'password.desc', color: 'bg-red-50 text-red-600' },
+  { path: '/wordcount', icon: 'W', labelKey: 'wordcount.title', descKey: 'wordcount.desc', color: 'bg-teal-50 text-teal-600' },
+  { path: '/case', icon: 'Aa', labelKey: 'case.title', descKey: 'case.desc', color: 'bg-orange-50 text-orange-600' },
+  { path: '/textreverse', icon: 'R', labelKey: 'textreverse.title', descKey: 'textreverse.desc', color: 'bg-violet-50 text-violet-600' },
+  { path: '/removeempty', icon: '-+', labelKey: 'removeempty.title', descKey: 'removeempty.desc', color: 'bg-emerald-50 text-emerald-600' },
+  { path: '/textreplace', icon: 'S>R', labelKey: 'textreplace.title', descKey: 'textreplace.desc', color: 'bg-sky-50 text-sky-600' },
+  { path: '/numberbase', icon: '0b', labelKey: 'numberbase.title', descKey: 'numberbase.desc', color: 'bg-lime-50 text-lime-600' },
+  { path: '/random', icon: '?', labelKey: 'random.title', descKey: 'random.desc', color: 'bg-fuchsia-50 text-fuchsia-600' },
+  { path: '/hash', icon: '#', labelKey: 'hash.title', descKey: 'hash.desc', color: 'bg-rose-50 text-rose-600' },
+  { path: '/qrcode', icon: 'QR', labelKey: 'qrcode.title', descKey: 'qrcode.desc', color: 'bg-slate-50 text-slate-600' },
+  { path: '/markdown', icon: 'M', labelKey: 'markdown.title', descKey: 'markdown.desc', color: 'bg-zinc-50 text-zinc-600' },
+  { path: '/unit', icon: 'U', labelKey: 'unit.title', descKey: 'unit.desc', color: 'bg-amber-50 text-amber-700' },
 ]
 
 export default function Home() {
