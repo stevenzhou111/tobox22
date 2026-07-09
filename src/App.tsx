@@ -28,6 +28,11 @@ import RomanNumeral from './pages/RomanNumeral'
 import Pomodoro from './pages/Pomodoro'
 import CoinFlip from './pages/CoinFlip'
 import JWTParser from './pages/JWTParser'
+import ImageCompress from './pages/ImageCompress'
+import ImageBase64 from './pages/ImageBase64'
+import DrawingBoard from './pages/DrawingBoard'
+import CSVJSON from './pages/CSVJSON'
+import ColorPicker from './pages/ColorPicker'
 
 export default function App() {
   return (
@@ -61,6 +66,11 @@ export default function App() {
         <Route path="/pomodoro" element={<Pomodoro />} />
         <Route path="/coin" element={<CoinFlip />} />
         <Route path="/jwt" element={<JWTParser />} />
+        <Route path="/imgcompress" element={<ImageCompress />} />
+        <Route path="/imgbase64" element={<ImageBase64 />} />
+        <Route path="/drawboard" element={<DrawingBoard />} />
+        <Route path="/csvjson" element={<CSVJSON />} />
+        <Route path="/colorpicker" element={<ColorPicker />} />
       </Route>
     </Routes>
   )

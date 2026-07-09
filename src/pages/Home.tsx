@@ -45,6 +45,15 @@ const tools: Tool[] = [
   { path: '/unit', icon: 'U', labelKey: 'unit.title', descKey: 'unit.desc', color: 'bg-amber-500', category: 'home.cat.utils' },
   { path: '/pomodoro', icon: 'T', labelKey: 'pomodoro.title', descKey: 'pomodoro.desc', color: 'bg-red-500', category: 'home.cat.utils' },
   { path: '/coin', icon: '$', labelKey: 'coin.title', descKey: 'coin.desc', color: 'bg-yellow-500', category: 'home.cat.utils' },
+
+  // 图片工具
+  { path: '/imgcompress', icon: 'IC', labelKey: 'imgcompress.title', descKey: 'imgcompress.desc', color: 'bg-teal-500', category: 'home.cat.image' },
+  { path: '/imgbase64', icon: 'IB', labelKey: 'imgbase64.title', descKey: 'imgbase64.desc', color: 'bg-cyan-500', category: 'home.cat.image' },
+  { path: '/colorpicker', icon: 'CP', labelKey: 'colorpicker.title', descKey: 'colorpicker.desc', color: 'bg-purple-500', category: 'home.cat.image' },
+  { path: '/drawboard', icon: 'DB', labelKey: 'drawboard.title', descKey: 'drawboard.desc', color: 'bg-orange-500', category: 'home.cat.image' },
+
+  // 数据工具
+  { path: '/csvjson', icon: 'CJ', labelKey: 'csvjson.title', descKey: 'csvjson.desc', color: 'bg-indigo-500', category: 'home.cat.data' },
 ]
 
 const categories = [
@@ -52,6 +61,8 @@ const categories = [
   { key: 'home.cat.text', color: 'text-emerald-600' },
   { key: 'home.cat.number', color: 'text-purple-600' },
   { key: 'home.cat.utils', color: 'text-pink-600' },
+  { key: 'home.cat.image', color: 'text-teal-600' },
+  { key: 'home.cat.data', color: 'text-indigo-600' },
 ]
 
 export default function Home() {
