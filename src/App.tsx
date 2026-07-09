@@ -33,6 +33,12 @@ import ImageBase64 from './pages/ImageBase64'
 import DrawingBoard from './pages/DrawingBoard'
 import CSVJSON from './pages/CSVJSON'
 import ColorPicker from './pages/ColorPicker'
+import BarChart from './pages/BarChart'
+import PieChart from './pages/PieChart'
+import LineChart from './pages/LineChart'
+import ImageResize from './pages/ImageResize'
+import ImageFilter from './pages/ImageFilter'
+import TextSplit from './pages/TextSplit'
 
 export default function App() {
   return (
@@ -71,6 +77,12 @@ export default function App() {
         <Route path="/drawboard" element={<DrawingBoard />} />
         <Route path="/csvjson" element={<CSVJSON />} />
         <Route path="/colorpicker" element={<ColorPicker />} />
+        <Route path="/barchart" element={<BarChart />} />
+        <Route path="/piechart" element={<PieChart />} />
+        <Route path="/linechart" element={<LineChart />} />
+        <Route path="/imgresize" element={<ImageResize />} />
+        <Route path="/imgfilter" element={<ImageFilter />} />
+        <Route path="/textsplit" element={<TextSplit />} />
       </Route>
     </Routes>
   )

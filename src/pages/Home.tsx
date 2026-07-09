@@ -51,9 +51,17 @@ const tools: Tool[] = [
   { path: '/imgbase64', icon: 'IB', labelKey: 'imgbase64.title', descKey: 'imgbase64.desc', color: 'bg-cyan-500', category: 'home.cat.image' },
   { path: '/colorpicker', icon: 'CP', labelKey: 'colorpicker.title', descKey: 'colorpicker.desc', color: 'bg-purple-500', category: 'home.cat.image' },
   { path: '/drawboard', icon: 'DB', labelKey: 'drawboard.title', descKey: 'drawboard.desc', color: 'bg-orange-500', category: 'home.cat.image' },
+  { path: '/imgresize', icon: 'IR', labelKey: 'imgreresize.title', descKey: 'imgreresize.desc', color: 'bg-blue-500', category: 'home.cat.image' },
+  { path: '/imgfilter', icon: 'IF', labelKey: 'imgfilter.title', descKey: 'imgfilter.desc', color: 'bg-pink-500', category: 'home.cat.image' },
 
   // 数据工具
   { path: '/csvjson', icon: 'CJ', labelKey: 'csvjson.title', descKey: 'csvjson.desc', color: 'bg-indigo-500', category: 'home.cat.data' },
+  { path: '/barchart', icon: 'BC', labelKey: 'barchart.title', descKey: 'barchart.desc', color: 'bg-blue-500', category: 'home.cat.data' },
+  { path: '/piechart', icon: 'PC', labelKey: 'piechart.title', descKey: 'piechart.desc', color: 'bg-green-500', category: 'home.cat.data' },
+  { path: '/linechart', icon: 'LC', labelKey: 'linechart.title', descKey: 'linechart.desc', color: 'bg-purple-500', category: 'home.cat.data' },
+
+  // 更多文本工具
+  { path: '/textsplit', icon: 'TS', labelKey: 'textsplit.title', descKey: 'textsplit.desc', color: 'bg-amber-500', category: 'home.cat.text' },
 ]
 
 const categories = [
