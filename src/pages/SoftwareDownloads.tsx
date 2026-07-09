@@ -9,84 +9,183 @@ interface Software {
 }
 
 const softwareList: Software[] = [
+  // 开发工具
   { name: 'Visual Studio Code', desc: '轻量级代码编辑器', icon: 'VS', category: 'dev', downloads: [
-    { label: 'Windows', url: 'https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user' },
-    { label: 'macOS', url: 'https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal' },
-    { label: 'Linux', url: 'https://code.visualstudio.com/sha/download?build=stable&os=linux-x64-deb' },
-  ]},
-  { name: 'Google Chrome', desc: '快速安全的浏览器', icon: 'GC', category: 'browser', downloads: [
-    { label: 'Windows', url: 'https://www.google.com/chrome/' },
-    { label: 'macOS', url: 'https://www.google.com/chrome/' },
-    { label: 'Linux', url: 'https://www.google.com/chrome/' },
-  ]},
-  { name: 'Mozilla Firefox', desc: '隐私保护浏览器', icon: 'FF', category: 'browser', downloads: [
-    { label: 'Windows', url: 'https://www.mozilla.org/firefox/download/' },
-    { label: 'macOS', url: 'https://www.mozilla.org/firefox/download/' },
-    { label: 'Linux', url: 'https://www.mozilla.org/firefox/download/' },
+    { label: '下载', url: 'https://code.visualstudio.com/' },
   ]},
   { name: 'Node.js', desc: 'JavaScript 运行时', icon: 'NJ', category: 'dev', downloads: [
-    { label: 'Windows', url: 'https://nodejs.org/download/' },
-    { label: 'macOS', url: 'https://nodejs.org/download/' },
-    { label: 'Linux', url: 'https://nodejs.org/download/' },
+    { label: '下载', url: 'https://nodejs.org/' },
   ]},
   { name: 'Git', desc: '分布式版本控制', icon: 'GT', category: 'dev', downloads: [
-    { label: 'Windows', url: 'https://git-scm.com/download/win' },
-    { label: 'macOS', url: 'https://git-scm.com/download/mac' },
-    { label: 'Linux', url: 'https://git-scm.com/download/linux' },
+    { label: '下载', url: 'https://git-scm.com/' },
   ]},
   { name: 'Docker Desktop', desc: '容器化应用平台', icon: 'DK', category: 'dev', downloads: [
-    { label: 'Windows', url: 'https://www.docker.com/products/docker-desktop/' },
-    { label: 'macOS', url: 'https://www.docker.com/products/docker-desktop/' },
-    { label: 'Linux', url: 'https://www.docker.com/products/docker-desktop/' },
-  ]},
-  { name: 'Notepad++', desc: 'Windows 文本编辑器', icon: 'NP', category: 'editor', downloads: [
-    { label: 'Windows', url: 'https://notepad-plus-plus.org/downloads/' },
-  ]},
-  { name: 'Sublime Text', desc: '优雅的代码编辑器', icon: 'ST', category: 'editor', downloads: [
-    { label: 'Windows', url: 'https://www.sublimetext.com/download' },
-    { label: 'macOS', url: 'https://www.sublimetext.com/download' },
-    { label: 'Linux', url: 'https://www.sublimetext.com/download' },
-  ]},
-  { name: '7-Zip', desc: '免费压缩软件', icon: '7Z', category: 'utility', downloads: [
-    { label: 'Windows', url: 'https://www.7-zip.org/download.html' },
-  ]},
-  { name: 'Everything', desc: '快速文件搜索', icon: 'EV', category: 'utility', downloads: [
-    { label: 'Windows', url: 'https://www.voidtools.com/downloads/' },
-  ]},
-  { name: 'OBS Studio', desc: '开源录屏软件', icon: 'OB', category: 'media', downloads: [
-    { label: 'Windows', url: 'https://obsproject.com/download' },
-    { label: 'macOS', url: 'https://obsproject.com/download' },
-    { label: 'Linux', url: 'https://obsproject.com/download' },
-  ]},
-  { name: 'VLC Media Player', desc: '万能播放器', icon: 'VL', category: 'media', downloads: [
-    { label: 'Windows', url: 'https://www.videolan.org/vlc/' },
-    { label: 'macOS', url: 'https://www.videolan.org/vlc/' },
-    { label: 'Linux', url: 'https://www.videolan.org/vlc/' },
+    { label: '下载', url: 'https://www.docker.com/products/docker-desktop/' },
   ]},
   { name: 'Postman', desc: 'API 测试工具', icon: 'PM', category: 'dev', downloads: [
-    { label: 'Windows', url: 'https://www.postman.com/downloads/' },
-    { label: 'macOS', url: 'https://www.postman.com/downloads/' },
+    { label: '下载', url: 'https://www.postman.com/downloads/' },
   ]},
-  { name: 'Figma', desc: '协作设计工具', icon: 'FG', category: 'design', downloads: [
-    { label: 'Windows', url: 'https://www.figma.com/downloads/' },
-    { label: 'macOS', url: 'https://www.figma.com/downloads/' },
+  { name: 'IntelliJ IDEA', desc: 'Java IDE', icon: 'IJ', category: 'dev', downloads: [
+    { label: '下载', url: 'https://www.jetbrains.com/idea/download/' },
   ]},
-  { name: 'Snipaste', desc: '截图贴图工具', icon: 'SN', category: 'utility', downloads: [
-    { label: 'Windows', url: 'https://www.snipaste.com/download.html' },
-    { label: 'macOS', url: 'https://www.snipaste.com/download.html' },
+  { name: 'WebStorm', desc: 'JavaScript IDE', icon: 'WS', category: 'dev', downloads: [
+    { label: '下载', url: 'https://www.jetbrains.com/webstorm/download/' },
+  ]},
+  { name: 'Python', desc: 'Python 编程语言', icon: 'PY', category: 'dev', downloads: [
+    { label: '下载', url: 'https://www.python.org/downloads/' },
+  ]},
+
+  // 浏览器
+  { name: 'Google Chrome', desc: '快速安全的浏览器', icon: 'GC', category: 'browser', downloads: [
+    { label: '下载', url: 'https://www.google.com/chrome/' },
+  ]},
+  { name: 'Mozilla Firefox', desc: '隐私保护浏览器', icon: 'FF', category: 'browser', downloads: [
+    { label: '下载', url: 'https://www.mozilla.org/firefox/download/' },
+  ]},
+  { name: 'Microsoft Edge', desc: '微软浏览器', icon: 'ED', category: 'browser', downloads: [
+    { label: '下载', url: 'https://www.microsoft.com/edge' },
+  ]},
+  { name: 'Brave', desc: '隐私浏览器', icon: 'BR', category: 'browser', downloads: [
+    { label: '下载', url: 'https://brave.com/download/' },
+  ]},
+  { name: 'Arc', desc: '创新浏览器', icon: 'AR', category: 'browser', downloads: [
+    { label: '下载', url: 'https://arc.net/' },
+  ]},
+
+  // 编辑器
+  { name: 'Notepad++', desc: 'Windows 文本编辑器', icon: 'NP', category: 'editor', downloads: [
+    { label: '下载', url: 'https://notepad-plus-plus.org/downloads/' },
+  ]},
+  { name: 'Sublime Text', desc: '优雅的代码编辑器', icon: 'ST', category: 'editor', downloads: [
+    { label: '下载', url: 'https://www.sublimetext.com/download' },
   ]},
   { name: 'Typora', desc: '极简 Markdown 编辑器', icon: 'TP', category: 'editor', downloads: [
-    { label: 'Windows', url: 'https://typora.io/' },
-    { label: 'macOS', url: 'https://typora.io/' },
-    { label: 'Linux', url: 'https://typora.io/' },
+    { label: '下载', url: 'https://typora.io/' },
+  ]},
+  { name: 'Obsidian', desc: '知识管理笔记', icon: 'OB', category: 'editor', downloads: [
+    { label: '下载', url: 'https://obsidian.md/download' },
+  ]},
+
+  // 实用工具
+  { name: '7-Zip', desc: '免费压缩软件', icon: '7Z', category: 'utility', downloads: [
+    { label: '下载', url: 'https://www.7-zip.org/download.html' },
+  ]},
+  { name: 'Everything', desc: '快速文件搜索', icon: 'EV', category: 'utility', downloads: [
+    { label: '下载', url: 'https://www.voidtools.com/downloads/' },
+  ]},
+  { name: 'Snipaste', desc: '截图贴图工具', icon: 'SN', category: 'utility', downloads: [
+    { label: '下载', url: 'https://www.snipaste.com/download.html' },
   ]},
   { name: 'PowerToys', desc: 'Windows 增强工具', icon: 'PT', category: 'utility', downloads: [
-    { label: 'Windows', url: 'https://github.com/microsoft/PowerToys/releases/latest' },
+    { label: '下载', url: 'https://github.com/microsoft/PowerToys/releases/latest' },
   ]},
   { name: 'uTools', desc: '效率工具集', icon: 'UT', category: 'utility', downloads: [
-    { label: 'Windows', url: 'https://www.u.tools/download.html' },
-    { label: 'macOS', url: 'https://www.u.tools/download.html' },
-    { label: 'Linux', url: 'https://www.u.tools/download.html' },
+    { label: '下载', url: 'https://www.u.tools/download.html' },
+  ]},
+  { name: 'Listary', desc: '文件快速启动', icon: 'LI', category: 'utility', downloads: [
+    { label: '下载', url: 'https://www.listary.com/download' },
+  ]},
+  { name: 'Flow Launcher', desc: '开源快速启动', icon: 'FL', category: 'utility', downloads: [
+    { label: '下载', url: 'https://www.flowlauncher.com/download/' },
+  ]},
+
+  // 媒体工具
+  { name: 'OBS Studio', desc: '开源录屏软件', icon: 'OS', category: 'media', downloads: [
+    { label: '下载', url: 'https://obsproject.com/download' },
+  ]},
+  { name: 'VLC Media Player', desc: '万能播放器', icon: 'VL', category: 'media', downloads: [
+    { label: '下载', url: 'https://www.videolan.org/vlc/' },
+  ]},
+  { name: 'Audacity', desc: '音频编辑器', icon: 'AU', category: 'media', downloads: [
+    { label: '下载', url: 'https://www.audacityteam.org/download/' },
+  ]},
+  { name: 'GIMP', desc: '开源图像编辑', icon: 'GI', category: 'media', downloads: [
+    { label: '下载', url: 'https://www.gimp.org/downloads/' },
+  ]},
+  { name: 'ShareX', desc: '截图录屏工具', icon: 'SX', category: 'media', downloads: [
+    { label: '下载', url: 'https://getsharex.com/downloads' },
+  ]},
+
+  // 设计工具
+  { name: 'Figma', desc: '协作设计工具', icon: 'FG', category: 'design', downloads: [
+    { label: '下载', url: 'https://www.figma.com/downloads/' },
+  ]},
+  { name: 'Blender', desc: '3D 建模软件', icon: 'BL', category: 'design', downloads: [
+    { label: '下载', url: 'https://www.blender.org/download/' },
+  ]},
+  { name: 'Inkscape', desc: '矢量图形编辑', icon: 'IK', category: 'design', downloads: [
+    { label: '下载', url: 'https://inkscape.org/release/' },
+  ]},
+  { name: 'Penpot', desc: '开源设计工具', icon: 'PP', category: 'design', downloads: [
+    { label: '下载', url: 'https://penpot.app/' },
+  ]},
+
+  // 远程工具
+  { name: 'ToDesk', desc: '国产远程控制', icon: 'TD', category: 'remote', downloads: [
+    { label: '下载', url: 'https://www.todesk.com/download.html' },
+  ]},
+  { name: 'AnyDesk', desc: '轻量远程桌面', icon: 'AD', category: 'remote', downloads: [
+    { label: '下载', url: 'https://anydesk.com/downloads' },
+  ]},
+  { name: 'TeamViewer', desc: '专业远程控制', icon: 'TV', category: 'remote', downloads: [
+    { label: '下载', url: 'https://www.teamviewer.com/download/' },
+  ]},
+  { name: 'RustDesk', desc: '开源远程桌面', icon: 'RD', category: 'remote', downloads: [
+    { label: '下载', url: 'https://rustdesk.com/download' },
+  ]},
+  { name: 'Parsec', desc: '游戏远程串流', icon: 'PC', category: 'remote', downloads: [
+    { label: '下载', url: 'https://parsec.app/downloads' },
+  ]},
+  { name: '向日葵', desc: '国产远程控制', icon: 'XR', category: 'remote', downloads: [
+    { label: '下载', url: 'https://sunlogin.oray.com/download' },
+  ]},
+
+  // 社交/通讯
+  { name: '微信', desc: '社交通讯', icon: 'WX', category: 'social', downloads: [
+    { label: '下载', url: 'https://weixin.qq.com/' },
+  ]},
+  { name: 'QQ', desc: '社交通讯', icon: 'QQ', category: 'social', downloads: [
+    { label: '下载', url: 'https://im.qq.com/' },
+  ]},
+  { name: 'Telegram', desc: '加密通讯', icon: 'TG', category: 'social', downloads: [
+    { label: '下载', url: 'https://desktop.telegram.org/' },
+  ]},
+  { name: 'Discord', desc: '语音社区', icon: 'DC', category: 'social', downloads: [
+    { label: '下载', url: 'https://discord.com/download' },
+  ]},
+  { name: 'Slack', desc: '团队协作', icon: 'SK', category: 'social', downloads: [
+    { label: '下载', url: 'https://slack.com/downloads' },
+  ]},
+  { name: '飞书', desc: '办公协作', icon: 'FS', category: 'social', downloads: [
+    { label: '下载', url: 'https://www.feishu.cn/download' },
+  ]},
+  { name: '钉钉', desc: '企业通讯', icon: 'DD', category: 'social', downloads: [
+    { label: '下载', url: 'https://www.dingtalk.com/download' },
+  ]},
+  { name: '腾讯会议', desc: '在线会议', icon: 'HM', category: 'social', downloads: [
+    { label: '下载', url: 'https://meeting.tencent.com/download-center.html' },
+  ]},
+
+  // 下载工具
+  { name: 'IDM', desc: '下载加速器', icon: 'ID', category: 'download', downloads: [
+    { label: '下载', url: 'https://www.internetdownloadmanager.com/download.html' },
+  ]},
+  { name: 'Motrix', desc: '开源下载工具', icon: 'MX', category: 'download', downloads: [
+    { label: '下载', url: 'https://motrix.app/download' },
+  ]},
+  { name: 'aria2', desc: '命令行下载工具', icon: 'A2', category: 'download', downloads: [
+    { label: '下载', url: 'https://aria2.github.io/' },
+  ]},
+
+  // 安全工具
+  { name: 'KeePass', desc: '密码管理器', icon: 'KP', category: 'security', downloads: [
+    { label: '下载', url: 'https://keepass.info/download.html' },
+  ]},
+  { name: 'Bitwarden', desc: '云端密码管理', icon: 'BW', category: 'security', downloads: [
+    { label: '下载', url: 'https://bitwarden.com/download/' },
+  ]},
+  { name: 'ClamAV', desc: '开源杀毒软件', icon: 'CA', category: 'security', downloads: [
+    { label: '下载', url: 'https://www.clamav.net/downloads' },
   ]},
 ]
 
@@ -97,6 +196,10 @@ const categories = [
   { key: 'utility', label: '实用工具', color: '#f56c6c' },
   { key: 'media', label: '媒体工具', color: '#9b59b6' },
   { key: 'design', label: '设计工具', color: '#e91e63' },
+  { key: 'remote', label: '远程工具', color: '#00bcd4' },
+  { key: 'social', label: '社交/通讯', color: '#ff9800' },
+  { key: 'download', label: '下载工具', color: '#8bc34a' },
+  { key: 'security', label: '安全工具', color: '#607d8b' },
 ]
 
 export default function SoftwareDownloads() {
@@ -117,10 +220,10 @@ export default function SoftwareDownloads() {
               {items.map((sw) => (
                 <div key={sw.name} className="bg-white border border-[#e5e7eb] rounded-lg p-4 hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white text-sm" style={{ background: cat.color }}>{sw.icon}</div>
-                    <div>
-                      <div className="font-medium text-[#303133]">{sw.name}</div>
-                      <div className="text-xs text-[#909399]">{sw.desc}</div>
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white text-sm shrink-0" style={{ background: cat.color }}>{sw.icon}</div>
+                    <div className="min-w-0">
+                      <div className="font-medium text-[#303133] truncate">{sw.name}</div>
+                      <div className="text-xs text-[#909399] truncate">{sw.desc}</div>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">

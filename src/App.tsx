@@ -89,6 +89,12 @@ const SoftwareDownloads = lazy(() => import('./pages/SoftwareDownloads'))
 const HexColor = lazy(() => import('./pages/HexColor'))
 const NumberConverter = lazy(() => import('./pages/NumberConverter'))
 const TextCounter = lazy(() => import('./pages/TextCounter'))
+const TextTransformer = lazy(() => import('./pages/TextTransformer'))
+const TextDifference = lazy(() => import('./pages/TextDifference'))
+const CronExpression = lazy(() => import('./pages/CronExpression'))
+const NumberWords = lazy(() => import('./pages/NumberWords'))
+const Base64Image = lazy(() => import('./pages/Base64Image'))
+const TextCounterAdvanced = lazy(() => import('./pages/TextCounterAdvanced'))
 
 function Loading() {
   return (
@@ -190,6 +196,12 @@ export default function App() {
           <Route path="/hexcolor" element={<HexColor />} />
           <Route path="/numconv2" element={<NumberConverter />} />
           <Route path="/textcounter" element={<TextCounter />} />
+          <Route path="/texttransform" element={<TextTransformer />} />
+          <Route path="/textdiff2" element={<TextDifference />} />
+          <Route path="/cron" element={<CronExpression />} />
+          <Route path="/numwords2" element={<NumberWords />} />
+          <Route path="/base64img" element={<Base64Image />} />
+          <Route path="/textcounteradv" element={<TextCounterAdvanced />} />
         </Route>
       </Routes>
     </Suspense>

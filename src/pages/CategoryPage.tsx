@@ -117,6 +117,16 @@ const allTools: Tool[] = [
 
   // 更多数字工具
   { path: '/numwords', icon: 'NW', labelKey: 'numwords.title', descKey: 'numwords.desc', color: '#9b59b6', category: 'number' },
+  { path: '/numwords2', icon: 'NW2', labelKey: 'numwords2.title', descKey: 'numwords2.desc', color: '#e91e63', category: 'number' },
+
+  // 更多文本工具
+  { path: '/texttransform', icon: 'TT', labelKey: 'texttransform.title', descKey: 'texttransform.desc', color: '#00bcd4', category: 'text' },
+  { path: '/textdiff2', icon: 'TD', labelKey: 'textcompare.title', descKey: 'textcompare.desc', color: '#ff5722', category: 'text' },
+  { path: '/textcounteradv', icon: 'TC2', labelKey: 'textcounteradv.title', descKey: 'textcounteradv.desc', color: '#795548', category: 'text' },
+
+  // 更多办公工具
+  { path: '/cron', icon: 'CR', labelKey: 'cron.title', descKey: 'cron.desc', color: '#607d8b', category: 'office' },
+  { path: '/base64img', icon: 'B64I', labelKey: 'base64img.title', descKey: 'base64img.desc', color: '#4caf50', category: 'office' },
 
   // 软件下载
   { path: '/software', icon: 'SW', labelKey: 'software.title', descKey: 'software.desc', color: '#409eff', category: 'software' },
