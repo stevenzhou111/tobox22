@@ -39,12 +39,23 @@ import LineChart from './pages/LineChart'
 import ImageResize from './pages/ImageResize'
 import ImageFilter from './pages/ImageFilter'
 import TextSplit from './pages/TextSplit'
+import CategoryPage from './pages/CategoryPage'
+import TextToBinary from './pages/TextToBinary'
+import TextToHex from './pages/TextToHex'
+import TextToAscii from './pages/TextToAscii'
+import NumberConvert from './pages/NumberConvert'
+import PasswordStrength from './pages/PasswordStrength'
+import TextStatistics from './pages/TextStatistics'
+import JsonConverter from './pages/JsonConverter'
+import TextEncrypt from './pages/TextEncrypt'
+import JsonYaml from './pages/JsonYaml'
 
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/json" element={<JsonFormatter />} />
         <Route path="/base64" element={<Base64Tool />} />
         <Route path="/url" element={<UrlEncoder />} />
@@ -83,6 +94,15 @@ export default function App() {
         <Route path="/imgresize" element={<ImageResize />} />
         <Route path="/imgfilter" element={<ImageFilter />} />
         <Route path="/textsplit" element={<TextSplit />} />
+        <Route path="/textbinary" element={<TextToBinary />} />
+        <Route path="/texthex" element={<TextToHex />} />
+        <Route path="/textascii" element={<TextToAscii />} />
+        <Route path="/numconvert" element={<NumberConvert />} />
+        <Route path="/passwordstrength" element={<PasswordStrength />} />
+        <Route path="/textstats" element={<TextStatistics />} />
+        <Route path="/jsonconvert" element={<JsonConverter />} />
+        <Route path="/textencrypt" element={<TextEncrypt />} />
+        <Route path="/jsonyaml" element={<JsonYaml />} />
       </Route>
     </Routes>
   )
