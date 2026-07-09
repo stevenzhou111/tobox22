@@ -29,6 +29,11 @@ const allTools: Tool[] = [
   { path: '/texthex', icon: '0x', labelKey: 'texthex.title', descKey: 'texthex.desc', color: '#607d8b', category: 'text' },
   { path: '/textascii', icon: 'A', labelKey: 'textascii.title', descKey: 'textascii.desc', color: '#009688', category: 'text' },
   { path: '/textstats', icon: 'S', labelKey: 'textstats.title', descKey: 'textstats.desc', color: '#673ab7', category: 'text' },
+  { path: '/lorem', icon: 'L', labelKey: 'lorem.title', descKey: 'lorem.desc', color: '#795548', category: 'text' },
+  { path: '/htmlencode', icon: 'H', labelKey: 'htmlencode.title', descKey: 'htmlencode.desc', color: '#ff5722', category: 'text' },
+  { path: '/slug', icon: 'SL', labelKey: 'slug.title', descKey: 'slug.desc', color: '#607d8b', category: 'text' },
+  { path: '/textsort', icon: 'SO', labelKey: 'textsort.title', descKey: 'textsort.desc', color: '#009688', category: 'text' },
+  { path: '/regextool', icon: 'RG', labelKey: 'regextool.title', descKey: 'regextool.desc', color: '#9c27b0', category: 'text' },
 
   // 数字工具
   { path: '/timestamp', icon: '#', labelKey: 'timestamp.title', descKey: 'timestamp.desc', color: '#9b59b6', category: 'number' },
@@ -36,6 +41,12 @@ const allTools: Tool[] = [
   { path: '/random', icon: '?', labelKey: 'random.title', descKey: 'random.desc', color: '#e91e63', category: 'number' },
   { path: '/roman', icon: 'X', labelKey: 'roman.title', descKey: 'roman.desc', color: '#ff5722', category: 'number' },
   { path: '/numconvert', icon: 'NC', labelKey: 'numconvert.title', descKey: 'numconvert.desc', color: '#4caf50', category: 'number' },
+  { path: '/calculator', icon: 'CAL', labelKey: 'calculator.title', descKey: 'calculator.desc', color: '#303133', category: 'number' },
+  { path: '/percentage', icon: '%', labelKey: 'percentage.title', descKey: 'percentage.desc', color: '#409eff', category: 'number' },
+  { path: '/fibonacci', icon: 'FI', labelKey: 'fibonacci.title', descKey: 'fibonacci.desc', color: '#67c23a', category: 'number' },
+  { path: '/prime', icon: 'PR', labelKey: 'prime.title', descKey: 'prime.desc', color: '#e6a23c', category: 'number' },
+  { path: '/gcdlcm', icon: 'GL', labelKey: 'gcdlcm.title', descKey: 'gcdlcm.desc', color: '#f56c6c', category: 'number' },
+  { path: '/factorial', icon: '!', labelKey: 'factorial.title', descKey: 'factorial.desc', color: '#909399', category: 'number' },
 
   // 加密工具
   { path: '/base64', icon: 'B64', labelKey: 'base64.title', descKey: 'base64.desc', color: '#4caf50', category: 'encrypt' },
@@ -45,6 +56,8 @@ const allTools: Tool[] = [
   { path: '/regex', icon: '.*', labelKey: 'regex.title', descKey: 'regex.desc', color: '#9c27b0', category: 'encrypt' },
   { path: '/textencrypt', icon: 'TE', labelKey: 'textencrypt.title', descKey: 'textencrypt.desc', color: '#f44336', category: 'encrypt' },
   { path: '/passwordstrength', icon: 'PS', labelKey: 'passwordstrength.title', descKey: 'passwordstrength.desc', color: '#e91e63', category: 'encrypt' },
+  { path: '/uuid', icon: 'ID', labelKey: 'uuid.title', descKey: 'uuid.desc', color: '#00bcd4', category: 'encrypt' },
+  { path: '/randomstr', icon: 'RS', labelKey: 'randomstr.title', descKey: 'randomstr.desc', color: '#ff9800', category: 'encrypt' },
 
   // 图片工具
   { path: '/imgcompress', icon: 'IC', labelKey: 'imgcompress.title', descKey: 'imgcompress.desc', color: '#00bcd4', category: 'image' },
@@ -54,6 +67,9 @@ const allTools: Tool[] = [
   { path: '/imgresize', icon: 'IR', labelKey: 'imgreresize.title', descKey: 'imgreresize.desc', color: '#2196f3', category: 'image' },
   { path: '/imgfilter', icon: 'IF', labelKey: 'imgfilter.title', descKey: 'imgfilter.desc', color: '#e91e63', category: 'image' },
   { path: '/color', icon: 'C', labelKey: 'color.title', descKey: 'color.desc', color: '#e91e63', category: 'image' },
+  { path: '/palette', icon: 'PA', labelKey: 'palette.title', descKey: 'palette.desc', color: '#673ab7', category: 'image' },
+  { path: '/gradient', icon: 'GR', labelKey: 'gradient.title', descKey: 'gradient.desc', color: '#00bcd4', category: 'image' },
+  { path: '/shadow', icon: 'SH', labelKey: 'shadow.title', descKey: 'shadow.desc', color: '#607d8b', category: 'image' },
 
   // 数据图表
   { path: '/barchart', icon: 'BC', labelKey: 'barchart.title', descKey: 'barchart.desc', color: '#2196f3', category: 'chart' },
@@ -73,8 +89,12 @@ const allTools: Tool[] = [
   { path: '/excelpreview', icon: 'EP', labelKey: 'excelpreview.title', descKey: 'excelpreview.desc', color: '#8bc34a', category: 'office' },
   { path: '/xmlconvert', icon: 'XC', labelKey: 'xmlconvert.title', descKey: 'xmlconvert.desc', color: '#ff5722', category: 'office' },
 
-  // 单位转换
+  // 单位转换 & 计算器
   { path: '/unit', icon: 'U', labelKey: 'unit.title', descKey: 'unit.desc', color: '#ff9800', category: 'unit' },
+  { path: '/tip', icon: 'TP', labelKey: 'tip.title', descKey: 'tip.desc', color: '#67c23a', category: 'unit' },
+  { path: '/bmi', icon: 'BM', labelKey: 'bmi.title', descKey: 'bmi.desc', color: '#409eff', category: 'unit' },
+  { path: '/age', icon: 'AG', labelKey: 'age.title', descKey: 'age.desc', color: '#e6a23c', category: 'unit' },
+  { path: '/loan', icon: 'LN', labelKey: 'loan.title', descKey: 'loan.desc', color: '#f56c6c', category: 'unit' },
 ]
 
 const categoryInfo: Record<string, { labelKey: string; color: string }> = {
@@ -84,7 +104,7 @@ const categoryInfo: Record<string, { labelKey: string; color: string }> = {
   image: { labelKey: 'home.image', color: '#00bcd4' },
   chart: { labelKey: 'home.chart', color: '#2196f3' },
   office: { labelKey: 'home.office', color: '#e91e63' },
-  unit: { labelKey: 'home.unit', color: '#ff9800' },
+  unit: { labelKey: 'home.calc', color: '#ff9800' },
 }
 
 export default function CategoryPage() {

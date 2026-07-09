@@ -55,6 +55,26 @@ const CsvViewer = lazy(() => import('./pages/CsvViewer'))
 const JsonToTable = lazy(() => import('./pages/JsonToTable'))
 const ExcelPreview = lazy(() => import('./pages/ExcelPreview'))
 const XmlConverter = lazy(() => import('./pages/XmlConverter'))
+const LoremIpsum = lazy(() => import('./pages/LoremIpsum'))
+const Calculator = lazy(() => import('./pages/Calculator'))
+const PercentageCalc = lazy(() => import('./pages/PercentageCalc'))
+const TipCalculator = lazy(() => import('./pages/TipCalculator'))
+const BmiCalculator = lazy(() => import('./pages/BmiCalculator'))
+const AgeCalculator = lazy(() => import('./pages/AgeCalculator'))
+const LoanCalculator = lazy(() => import('./pages/LoanCalculator'))
+const UuidGenerator = lazy(() => import('./pages/UuidGenerator'))
+const RandomString = lazy(() => import('./pages/RandomString'))
+const HtmlEncoder = lazy(() => import('./pages/HtmlEncoder'))
+const ColorPalette = lazy(() => import('./pages/ColorPalette'))
+const FibonacciGenerator = lazy(() => import('./pages/FibonacciGenerator'))
+const PrimeChecker = lazy(() => import('./pages/PrimeChecker'))
+const GcdLcm = lazy(() => import('./pages/GcdLcm'))
+const Factorial = lazy(() => import('./pages/Factorial'))
+const TextSlug = lazy(() => import('./pages/TextSlug'))
+const TextSort = lazy(() => import('./pages/TextSort'))
+const GradientGenerator = lazy(() => import('./pages/GradientGenerator'))
+const ShadowGenerator = lazy(() => import('./pages/ShadowGenerator'))
+const RegexGenerator = lazy(() => import('./pages/RegexGenerator'))
 
 function Loading() {
   return (
@@ -122,6 +142,26 @@ export default function App() {
           <Route path="/jsontotable" element={<JsonToTable />} />
           <Route path="/excelpreview" element={<ExcelPreview />} />
           <Route path="/xmlconvert" element={<XmlConverter />} />
+          <Route path="/lorem" element={<LoremIpsum />} />
+          <Route path="/calculator" element={<Calculator />} />
+          <Route path="/percentage" element={<PercentageCalc />} />
+          <Route path="/tip" element={<TipCalculator />} />
+          <Route path="/bmi" element={<BmiCalculator />} />
+          <Route path="/age" element={<AgeCalculator />} />
+          <Route path="/loan" element={<LoanCalculator />} />
+          <Route path="/uuid" element={<UuidGenerator />} />
+          <Route path="/randomstr" element={<RandomString />} />
+          <Route path="/htmlencode" element={<HtmlEncoder />} />
+          <Route path="/palette" element={<ColorPalette />} />
+          <Route path="/fibonacci" element={<FibonacciGenerator />} />
+          <Route path="/prime" element={<PrimeChecker />} />
+          <Route path="/gcdlcm" element={<GcdLcm />} />
+          <Route path="/factorial" element={<Factorial />} />
+          <Route path="/slug" element={<TextSlug />} />
+          <Route path="/textsort" element={<TextSort />} />
+          <Route path="/gradient" element={<GradientGenerator />} />
+          <Route path="/shadow" element={<ShadowGenerator />} />
+          <Route path="/regextool" element={<RegexGenerator />} />
         </Route>
       </Routes>
     </Suspense>
