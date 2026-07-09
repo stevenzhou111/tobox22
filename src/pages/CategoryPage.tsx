@@ -128,9 +128,22 @@ const allTools: Tool[] = [
   { path: '/cron', icon: 'CR', labelKey: 'cron.title', descKey: 'cron.desc', color: '#607d8b', category: 'office' },
   { path: '/base64img', icon: 'B64I', labelKey: 'base64img.title', descKey: 'base64img.desc', color: '#4caf50', category: 'office' },
 
+  // 更多开发工具
+  { path: '/cssminify', icon: 'CSS', labelKey: 'cssminify.title', descKey: 'cssminify.desc', color: '#2196f3', category: 'dev' },
+  { path: '/htmlminify', icon: 'HM', labelKey: 'htmlminify.title', descKey: 'htmlminify.desc', color: '#ff5722', category: 'dev' },
+  { path: '/jsminify', icon: 'JS', labelKey: 'jsminify.title', descKey: 'jsminify.desc', color: '#f7df1e', category: 'dev' },
+  { path: '/jsonadv', icon: 'JF', labelKey: 'jsonadv.title', descKey: 'jsonadv.desc', color: '#f5a623', category: 'dev' },
+  { path: '/httpcodes', icon: 'HC', labelKey: 'httpcodes.title', descKey: 'httpcodes.desc', color: '#607d8b', category: 'dev' },
+  { path: '/metatag', icon: 'MT', labelKey: 'metatag.title', descKey: 'metatag.desc', color: '#4caf50', category: 'dev' },
+  { path: '/sqlformat', icon: 'SQ', labelKey: 'sqlformat.title', descKey: 'sqlformat.desc', color: '#2196f3', category: 'dev' },
+  { path: '/contrast', icon: 'CC', labelKey: 'contrast.title', descKey: 'contrast.desc', color: '#9c27b0', category: 'image' },
+
   // 软件下载
   { path: '/software', icon: 'SW', labelKey: 'software.title', descKey: 'software.desc', color: '#409eff', category: 'software' },
 ]
+
+// 添加开发工具分类
+categoryInfo['dev'] = { labelKey: 'home.dev', color: '#409eff' }
 
 const categoryInfo: Record<string, { labelKey: string; color: string }> = {
   text: { labelKey: 'home.text', color: '#1abc9c' },

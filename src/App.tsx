@@ -95,6 +95,14 @@ const CronExpression = lazy(() => import('./pages/CronExpression'))
 const NumberWords = lazy(() => import('./pages/NumberWords'))
 const Base64Image = lazy(() => import('./pages/Base64Image'))
 const TextCounterAdvanced = lazy(() => import('./pages/TextCounterAdvanced'))
+const CssMinify = lazy(() => import('./pages/CssMinify'))
+const HtmlMinify = lazy(() => import('./pages/HtmlMinify'))
+const JsMinify = lazy(() => import('./pages/JsMinify'))
+const JsonFormatterAdvanced = lazy(() => import('./pages/JsonFormatterAdvanced'))
+const HttpStatusCodes = lazy(() => import('./pages/HttpStatusCodes'))
+const ColorContrast = lazy(() => import('./pages/ColorContrast'))
+const MetaTagGenerator = lazy(() => import('./pages/MetaTagGenerator'))
+const SqlFormatter = lazy(() => import('./pages/SqlFormatter'))
 
 function Loading() {
   return (
@@ -202,6 +210,14 @@ export default function App() {
           <Route path="/numwords2" element={<NumberWords />} />
           <Route path="/base64img" element={<Base64Image />} />
           <Route path="/textcounteradv" element={<TextCounterAdvanced />} />
+          <Route path="/cssminify" element={<CssMinify />} />
+          <Route path="/htmlminify" element={<HtmlMinify />} />
+          <Route path="/jsminify" element={<JsMinify />} />
+          <Route path="/jsonadv" element={<JsonFormatterAdvanced />} />
+          <Route path="/httpcodes" element={<HttpStatusCodes />} />
+          <Route path="/contrast" element={<ColorContrast />} />
+          <Route path="/metatag" element={<MetaTagGenerator />} />
+          <Route path="/sqlformat" element={<SqlFormatter />} />
         </Route>
       </Routes>
     </Suspense>
