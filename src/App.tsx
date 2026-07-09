@@ -1,109 +1,129 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
-import Home from './pages/Home'
-import JsonFormatter from './pages/JsonFormatter'
-import Base64Tool from './pages/Base64Tool'
-import UrlEncoder from './pages/UrlEncoder'
-import TimestampTool from './pages/TimestampTool'
-import ColorConverter from './pages/ColorConverter'
-import TextDiff from './pages/TextDiff'
-import RegexTester from './pages/RegexTester'
-import PasswordGen from './pages/PasswordGen'
-import WordCount from './pages/WordCount'
-import CaseConverter from './pages/CaseConverter'
-import TextReverse from './pages/TextReverse'
-import RemoveEmptyLines from './pages/RemoveEmptyLines'
-import TextReplace from './pages/TextReplace'
-import NumberBase from './pages/NumberBase'
-import RandomNumber from './pages/RandomNumber'
-import HashGenerator from './pages/HashGenerator'
-import QRCode from './pages/QRCode'
-import MarkdownPreview from './pages/MarkdownPreview'
-import UnitConverter from './pages/UnitConverter'
-import TextExtract from './pages/TextExtract'
-import WordFrequency from './pages/WordFrequency'
-import UnicodeConverter from './pages/UnicodeConverter'
-import MorseCode from './pages/MorseCode'
-import RomanNumeral from './pages/RomanNumeral'
-import Pomodoro from './pages/Pomodoro'
-import CoinFlip from './pages/CoinFlip'
-import JWTParser from './pages/JWTParser'
-import ImageCompress from './pages/ImageCompress'
-import ImageBase64 from './pages/ImageBase64'
-import DrawingBoard from './pages/DrawingBoard'
-import CSVJSON from './pages/CSVJSON'
-import ColorPicker from './pages/ColorPicker'
-import BarChart from './pages/BarChart'
-import PieChart from './pages/PieChart'
-import LineChart from './pages/LineChart'
-import ImageResize from './pages/ImageResize'
-import ImageFilter from './pages/ImageFilter'
-import TextSplit from './pages/TextSplit'
-import CategoryPage from './pages/CategoryPage'
-import TextToBinary from './pages/TextToBinary'
-import TextToHex from './pages/TextToHex'
-import TextToAscii from './pages/TextToAscii'
-import NumberConvert from './pages/NumberConvert'
-import PasswordStrength from './pages/PasswordStrength'
-import TextStatistics from './pages/TextStatistics'
-import JsonConverter from './pages/JsonConverter'
-import TextEncrypt from './pages/TextEncrypt'
-import JsonYaml from './pages/JsonYaml'
+
+const Home = lazy(() => import('./pages/Home'))
+const CategoryPage = lazy(() => import('./pages/CategoryPage'))
+const JsonFormatter = lazy(() => import('./pages/JsonFormatter'))
+const Base64Tool = lazy(() => import('./pages/Base64Tool'))
+const UrlEncoder = lazy(() => import('./pages/UrlEncoder'))
+const TimestampTool = lazy(() => import('./pages/TimestampTool'))
+const ColorConverter = lazy(() => import('./pages/ColorConverter'))
+const TextDiff = lazy(() => import('./pages/TextDiff'))
+const RegexTester = lazy(() => import('./pages/RegexTester'))
+const PasswordGen = lazy(() => import('./pages/PasswordGen'))
+const WordCount = lazy(() => import('./pages/WordCount'))
+const CaseConverter = lazy(() => import('./pages/CaseConverter'))
+const TextReverse = lazy(() => import('./pages/TextReverse'))
+const RemoveEmptyLines = lazy(() => import('./pages/RemoveEmptyLines'))
+const TextReplace = lazy(() => import('./pages/TextReplace'))
+const NumberBase = lazy(() => import('./pages/NumberBase'))
+const RandomNumber = lazy(() => import('./pages/RandomNumber'))
+const HashGenerator = lazy(() => import('./pages/HashGenerator'))
+const QRCode = lazy(() => import('./pages/QRCode'))
+const MarkdownPreview = lazy(() => import('./pages/MarkdownPreview'))
+const UnitConverter = lazy(() => import('./pages/UnitConverter'))
+const TextExtract = lazy(() => import('./pages/TextExtract'))
+const WordFrequency = lazy(() => import('./pages/WordFrequency'))
+const UnicodeConverter = lazy(() => import('./pages/UnicodeConverter'))
+const MorseCode = lazy(() => import('./pages/MorseCode'))
+const RomanNumeral = lazy(() => import('./pages/RomanNumeral'))
+const Pomodoro = lazy(() => import('./pages/Pomodoro'))
+const CoinFlip = lazy(() => import('./pages/CoinFlip'))
+const JWTParser = lazy(() => import('./pages/JWTParser'))
+const ImageCompress = lazy(() => import('./pages/ImageCompress'))
+const ImageBase64 = lazy(() => import('./pages/ImageBase64'))
+const DrawingBoard = lazy(() => import('./pages/DrawingBoard'))
+const CSVJSON = lazy(() => import('./pages/CSVJSON'))
+const ColorPicker = lazy(() => import('./pages/ColorPicker'))
+const BarChart = lazy(() => import('./pages/BarChart'))
+const PieChart = lazy(() => import('./pages/PieChart'))
+const LineChart = lazy(() => import('./pages/LineChart'))
+const ImageResize = lazy(() => import('./pages/ImageResize'))
+const ImageFilter = lazy(() => import('./pages/ImageFilter'))
+const TextSplit = lazy(() => import('./pages/TextSplit'))
+const TextToBinary = lazy(() => import('./pages/TextToBinary'))
+const TextToHex = lazy(() => import('./pages/TextToHex'))
+const TextToAscii = lazy(() => import('./pages/TextToAscii'))
+const NumberConvert = lazy(() => import('./pages/NumberConvert'))
+const PasswordStrength = lazy(() => import('./pages/PasswordStrength'))
+const TextStatistics = lazy(() => import('./pages/TextStatistics'))
+const JsonConverter = lazy(() => import('./pages/JsonConverter'))
+const TextEncrypt = lazy(() => import('./pages/TextEncrypt'))
+const JsonYaml = lazy(() => import('./pages/JsonYaml'))
+const CsvViewer = lazy(() => import('./pages/CsvViewer'))
+const JsonToTable = lazy(() => import('./pages/JsonToTable'))
+const ExcelPreview = lazy(() => import('./pages/ExcelPreview'))
+const XmlConverter = lazy(() => import('./pages/XmlConverter'))
+
+function Loading() {
+  return (
+    <div className="flex items-center justify-center h-64">
+      <div className="text-[#909399]">Loading...</div>
+    </div>
+  )
+}
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/category/:id" element={<CategoryPage />} />
-        <Route path="/json" element={<JsonFormatter />} />
-        <Route path="/base64" element={<Base64Tool />} />
-        <Route path="/url" element={<UrlEncoder />} />
-        <Route path="/timestamp" element={<TimestampTool />} />
-        <Route path="/color" element={<ColorConverter />} />
-        <Route path="/diff" element={<TextDiff />} />
-        <Route path="/regex" element={<RegexTester />} />
-        <Route path="/password" element={<PasswordGen />} />
-        <Route path="/wordcount" element={<WordCount />} />
-        <Route path="/case" element={<CaseConverter />} />
-        <Route path="/textreverse" element={<TextReverse />} />
-        <Route path="/removeempty" element={<RemoveEmptyLines />} />
-        <Route path="/textreplace" element={<TextReplace />} />
-        <Route path="/numberbase" element={<NumberBase />} />
-        <Route path="/random" element={<RandomNumber />} />
-        <Route path="/hash" element={<HashGenerator />} />
-        <Route path="/qrcode" element={<QRCode />} />
-        <Route path="/markdown" element={<MarkdownPreview />} />
-        <Route path="/unit" element={<UnitConverter />} />
-        <Route path="/extract" element={<TextExtract />} />
-        <Route path="/wordfreq" element={<WordFrequency />} />
-        <Route path="/unicode" element={<UnicodeConverter />} />
-        <Route path="/morse" element={<MorseCode />} />
-        <Route path="/roman" element={<RomanNumeral />} />
-        <Route path="/pomodoro" element={<Pomodoro />} />
-        <Route path="/coin" element={<CoinFlip />} />
-        <Route path="/jwt" element={<JWTParser />} />
-        <Route path="/imgcompress" element={<ImageCompress />} />
-        <Route path="/imgbase64" element={<ImageBase64 />} />
-        <Route path="/drawboard" element={<DrawingBoard />} />
-        <Route path="/csvjson" element={<CSVJSON />} />
-        <Route path="/colorpicker" element={<ColorPicker />} />
-        <Route path="/barchart" element={<BarChart />} />
-        <Route path="/piechart" element={<PieChart />} />
-        <Route path="/linechart" element={<LineChart />} />
-        <Route path="/imgresize" element={<ImageResize />} />
-        <Route path="/imgfilter" element={<ImageFilter />} />
-        <Route path="/textsplit" element={<TextSplit />} />
-        <Route path="/textbinary" element={<TextToBinary />} />
-        <Route path="/texthex" element={<TextToHex />} />
-        <Route path="/textascii" element={<TextToAscii />} />
-        <Route path="/numconvert" element={<NumberConvert />} />
-        <Route path="/passwordstrength" element={<PasswordStrength />} />
-        <Route path="/textstats" element={<TextStatistics />} />
-        <Route path="/jsonconvert" element={<JsonConverter />} />
-        <Route path="/textencrypt" element={<TextEncrypt />} />
-        <Route path="/jsonyaml" element={<JsonYaml />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
+          <Route path="/json" element={<JsonFormatter />} />
+          <Route path="/base64" element={<Base64Tool />} />
+          <Route path="/url" element={<UrlEncoder />} />
+          <Route path="/timestamp" element={<TimestampTool />} />
+          <Route path="/color" element={<ColorConverter />} />
+          <Route path="/diff" element={<TextDiff />} />
+          <Route path="/regex" element={<RegexTester />} />
+          <Route path="/password" element={<PasswordGen />} />
+          <Route path="/wordcount" element={<WordCount />} />
+          <Route path="/case" element={<CaseConverter />} />
+          <Route path="/textreverse" element={<TextReverse />} />
+          <Route path="/removeempty" element={<RemoveEmptyLines />} />
+          <Route path="/textreplace" element={<TextReplace />} />
+          <Route path="/numberbase" element={<NumberBase />} />
+          <Route path="/random" element={<RandomNumber />} />
+          <Route path="/hash" element={<HashGenerator />} />
+          <Route path="/qrcode" element={<QRCode />} />
+          <Route path="/markdown" element={<MarkdownPreview />} />
+          <Route path="/unit" element={<UnitConverter />} />
+          <Route path="/extract" element={<TextExtract />} />
+          <Route path="/wordfreq" element={<WordFrequency />} />
+          <Route path="/unicode" element={<UnicodeConverter />} />
+          <Route path="/morse" element={<MorseCode />} />
+          <Route path="/roman" element={<RomanNumeral />} />
+          <Route path="/pomodoro" element={<Pomodoro />} />
+          <Route path="/coin" element={<CoinFlip />} />
+          <Route path="/jwt" element={<JWTParser />} />
+          <Route path="/imgcompress" element={<ImageCompress />} />
+          <Route path="/imgbase64" element={<ImageBase64 />} />
+          <Route path="/drawboard" element={<DrawingBoard />} />
+          <Route path="/csvjson" element={<CSVJSON />} />
+          <Route path="/colorpicker" element={<ColorPicker />} />
+          <Route path="/barchart" element={<BarChart />} />
+          <Route path="/piechart" element={<PieChart />} />
+          <Route path="/linechart" element={<LineChart />} />
+          <Route path="/imgresize" element={<ImageResize />} />
+          <Route path="/imgfilter" element={<ImageFilter />} />
+          <Route path="/textsplit" element={<TextSplit />} />
+          <Route path="/textbinary" element={<TextToBinary />} />
+          <Route path="/texthex" element={<TextToHex />} />
+          <Route path="/textascii" element={<TextToAscii />} />
+          <Route path="/numconvert" element={<NumberConvert />} />
+          <Route path="/passwordstrength" element={<PasswordStrength />} />
+          <Route path="/textstats" element={<TextStatistics />} />
+          <Route path="/jsonconvert" element={<JsonConverter />} />
+          <Route path="/textencrypt" element={<TextEncrypt />} />
+          <Route path="/jsonyaml" element={<JsonYaml />} />
+          <Route path="/csvviewer" element={<CsvViewer />} />
+          <Route path="/jsontotable" element={<JsonToTable />} />
+          <Route path="/excelpreview" element={<ExcelPreview />} />
+          <Route path="/xmlconvert" element={<XmlConverter />} />
+        </Route>
+      </Routes>
+    </Suspense>
   )
 }

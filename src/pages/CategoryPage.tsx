@@ -68,6 +68,10 @@ const allTools: Tool[] = [
   { path: '/csvjson', icon: 'CJ', labelKey: 'csvjson.title', descKey: 'csvjson.desc', color: '#3f51b5', category: 'office' },
   { path: '/jsonconvert', icon: 'JC', labelKey: 'jsonconverter.title', descKey: 'jsonconverter.desc', color: '#ff9800', category: 'office' },
   { path: '/jsonyaml', icon: 'JY', labelKey: 'jsonyaml.title', descKey: 'jsonyaml.desc', color: '#00bcd4', category: 'office' },
+  { path: '/csvviewer', icon: 'CV', labelKey: 'csvviewer.title', descKey: 'csvviewer.desc', color: '#4caf50', category: 'office' },
+  { path: '/jsontotable', icon: 'JT', labelKey: 'jsontotable.title', descKey: 'jsontotable.desc', color: '#2196f3', category: 'office' },
+  { path: '/excelpreview', icon: 'EP', labelKey: 'excelpreview.title', descKey: 'excelpreview.desc', color: '#8bc34a', category: 'office' },
+  { path: '/xmlconvert', icon: 'XC', labelKey: 'xmlconvert.title', descKey: 'xmlconvert.desc', color: '#ff5722', category: 'office' },
 
   // 单位转换
   { path: '/unit', icon: 'U', labelKey: 'unit.title', descKey: 'unit.desc', color: '#ff9800', category: 'unit' },
