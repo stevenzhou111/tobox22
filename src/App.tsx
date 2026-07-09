@@ -75,6 +75,20 @@ const TextSort = lazy(() => import('./pages/TextSort'))
 const GradientGenerator = lazy(() => import('./pages/GradientGenerator'))
 const ShadowGenerator = lazy(() => import('./pages/ShadowGenerator'))
 const RegexGenerator = lazy(() => import('./pages/RegexGenerator'))
+const NumberToWords = lazy(() => import('./pages/NumberToWords'))
+const TextWrap = lazy(() => import('./pages/TextWrap'))
+const TextLineNumbers = lazy(() => import('./pages/TextLineNumbers'))
+const MarkdownHtml = lazy(() => import('./pages/MarkdownHtml'))
+const Base32 = lazy(() => import('./pages/Base32'))
+const Rot13 = lazy(() => import('./pages/Rot13'))
+const Atbash = lazy(() => import('./pages/Atbash'))
+const ImageInfo = lazy(() => import('./pages/ImageInfo'))
+const CsvToTable = lazy(() => import('./pages/CsvToTable'))
+const JsonToYamlTool = lazy(() => import('./pages/JsonToYamlTool'))
+const SoftwareDownloads = lazy(() => import('./pages/SoftwareDownloads'))
+const HexColor = lazy(() => import('./pages/HexColor'))
+const NumberConverter = lazy(() => import('./pages/NumberConverter'))
+const TextCounter = lazy(() => import('./pages/TextCounter'))
 
 function Loading() {
   return (
@@ -162,6 +176,20 @@ export default function App() {
           <Route path="/gradient" element={<GradientGenerator />} />
           <Route path="/shadow" element={<ShadowGenerator />} />
           <Route path="/regextool" element={<RegexGenerator />} />
+          <Route path="/numwords" element={<NumberToWords />} />
+          <Route path="/textwrap" element={<TextWrap />} />
+          <Route path="/linenumbers" element={<TextLineNumbers />} />
+          <Route path="/mdhtml" element={<MarkdownHtml />} />
+          <Route path="/base32" element={<Base32 />} />
+          <Route path="/rot13" element={<Rot13 />} />
+          <Route path="/atbash" element={<Atbash />} />
+          <Route path="/imginfo" element={<ImageInfo />} />
+          <Route path="/csvtable" element={<CsvToTable />} />
+          <Route path="/json2yaml" element={<JsonToYamlTool />} />
+          <Route path="/software" element={<SoftwareDownloads />} />
+          <Route path="/hexcolor" element={<HexColor />} />
+          <Route path="/numconv2" element={<NumberConverter />} />
+          <Route path="/textcounter" element={<TextCounter />} />
         </Route>
       </Routes>
     </Suspense>

@@ -95,6 +95,31 @@ const allTools: Tool[] = [
   { path: '/bmi', icon: 'BM', labelKey: 'bmi.title', descKey: 'bmi.desc', color: '#409eff', category: 'unit' },
   { path: '/age', icon: 'AG', labelKey: 'age.title', descKey: 'age.desc', color: '#e6a23c', category: 'unit' },
   { path: '/loan', icon: 'LN', labelKey: 'loan.title', descKey: 'loan.desc', color: '#f56c6c', category: 'unit' },
+  { path: '/hexcolor', icon: 'HC', labelKey: 'hexcolor.title', descKey: 'hexcolor.desc', color: '#9c27b0', category: 'image' },
+
+  // 更多文本工具
+  { path: '/textwrap', icon: 'TW', labelKey: 'textwrap.title', descKey: 'textwrap.desc', color: '#795548', category: 'text' },
+  { path: '/linenumbers', icon: 'LN', labelKey: 'linenumbers.title', descKey: 'linenumbers.desc', color: '#607d8b', category: 'text' },
+  { path: '/textcounter', icon: 'TC', labelKey: 'textcounter.title', descKey: 'textcounter.desc', color: '#009688', category: 'text' },
+
+  // 更多加密工具
+  { path: '/base32', icon: 'B32', labelKey: 'base32.title', descKey: 'base32.desc', color: '#4caf50', category: 'encrypt' },
+  { path: '/rot13', icon: 'R13', labelKey: 'rot13.title', descKey: 'rot13.desc', color: '#ff5722', category: 'encrypt' },
+  { path: '/atbash', icon: 'AT', labelKey: 'atbash.title', descKey: 'atbash.desc', color: '#795548', category: 'encrypt' },
+
+  // 更多办公工具
+  { path: '/mdhtml', icon: 'MH', labelKey: 'mdhtml.title', descKey: 'mdhtml.desc', color: '#607d8b', category: 'office' },
+  { path: '/csvtable', icon: 'CT', labelKey: 'csvtable.title', descKey: 'csvtable.desc', color: '#4caf50', category: 'office' },
+  { path: '/json2yaml', icon: 'JY', labelKey: 'json2yaml.title', descKey: 'json2yaml.desc', color: '#2196f3', category: 'office' },
+
+  // 更多图片工具
+  { path: '/imginfo', icon: 'II', labelKey: 'imginfo.title', descKey: 'imginfo.desc', color: '#00bcd4', category: 'image' },
+
+  // 更多数字工具
+  { path: '/numwords', icon: 'NW', labelKey: 'numwords.title', descKey: 'numwords.desc', color: '#9b59b6', category: 'number' },
+
+  // 软件下载
+  { path: '/software', icon: 'SW', labelKey: 'software.title', descKey: 'software.desc', color: '#409eff', category: 'software' },
 ]
 
 const categoryInfo: Record<string, { labelKey: string; color: string }> = {
@@ -105,6 +130,7 @@ const categoryInfo: Record<string, { labelKey: string; color: string }> = {
   chart: { labelKey: 'home.chart', color: '#2196f3' },
   office: { labelKey: 'home.office', color: '#e91e63' },
   unit: { labelKey: 'home.calc', color: '#ff9800' },
+  software: { labelKey: 'home.software', color: '#409eff' },
 }
 
 export default function CategoryPage() {
