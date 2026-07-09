@@ -159,6 +159,17 @@ export default function Layout() {
             </svg>
             <span>{t('nav.unit')}</span>
           </NavLink>
+
+          <NavLink to="/category/software" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" strokeWidth="3"/>
+              <path d="M6 18H42" stroke="currentColor" strokeWidth="3"/>
+              <circle cx="12" cy="14" r="1.5" fill="currentColor"/>
+              <circle cx="17" cy="14" r="1.5" fill="currentColor"/>
+              <circle cx="22" cy="14" r="1.5" fill="currentColor"/>
+            </svg>
+            <span>{t('nav.software')}</span>
+          </NavLink>
         </nav>
       </aside>
 

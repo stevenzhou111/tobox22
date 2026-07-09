@@ -24,6 +24,7 @@ export default {
     chart: '数据图表',
     office: '办公辅助',
     unit: '单位转换',
+    software: '电脑必备软件',
     search: '搜索工具...',
   },
   home: {
