@@ -20,6 +20,14 @@ import HashGenerator from './pages/HashGenerator'
 import QRCode from './pages/QRCode'
 import MarkdownPreview from './pages/MarkdownPreview'
 import UnitConverter from './pages/UnitConverter'
+import TextExtract from './pages/TextExtract'
+import WordFrequency from './pages/WordFrequency'
+import UnicodeConverter from './pages/UnicodeConverter'
+import MorseCode from './pages/MorseCode'
+import RomanNumeral from './pages/RomanNumeral'
+import Pomodoro from './pages/Pomodoro'
+import CoinFlip from './pages/CoinFlip'
+import JWTParser from './pages/JWTParser'
 
 export default function App() {
   return (
@@ -45,6 +53,14 @@ export default function App() {
         <Route path="/qrcode" element={<QRCode />} />
         <Route path="/markdown" element={<MarkdownPreview />} />
         <Route path="/unit" element={<UnitConverter />} />
+        <Route path="/extract" element={<TextExtract />} />
+        <Route path="/wordfreq" element={<WordFrequency />} />
+        <Route path="/unicode" element={<UnicodeConverter />} />
+        <Route path="/morse" element={<MorseCode />} />
+        <Route path="/roman" element={<RomanNumeral />} />
+        <Route path="/pomodoro" element={<Pomodoro />} />
+        <Route path="/coin" element={<CoinFlip />} />
+        <Route path="/jwt" element={<JWTParser />} />
       </Route>
     </Routes>
   )

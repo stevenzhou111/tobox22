@@ -21,6 +21,14 @@ const tools = [
   { path: '/qrcode', icon: 'QR', labelKey: 'qrcode.title', descKey: 'qrcode.desc', color: 'bg-slate-50 text-slate-600' },
   { path: '/markdown', icon: 'M', labelKey: 'markdown.title', descKey: 'markdown.desc', color: 'bg-zinc-50 text-zinc-600' },
   { path: '/unit', icon: 'U', labelKey: 'unit.title', descKey: 'unit.desc', color: 'bg-amber-50 text-amber-700' },
+  { path: '/extract', icon: 'E', labelKey: 'textextract.title', descKey: 'textextract.desc', color: 'bg-red-50 text-red-500' },
+  { path: '/wordfreq', icon: 'F', labelKey: 'wordfreq.title', descKey: 'wordfreq.desc', color: 'bg-indigo-50 text-indigo-500' },
+  { path: '/unicode', icon: 'U+', labelKey: 'unicode.title', descKey: 'unicode.desc', color: 'bg-cyan-50 text-cyan-500' },
+  { path: '/morse', icon: '..', labelKey: 'morse.title', descKey: 'morse.desc', color: 'bg-emerald-50 text-emerald-500' },
+  { path: '/roman', icon: 'X', labelKey: 'roman.title', descKey: 'roman.desc', color: 'bg-amber-50 text-amber-600' },
+  { path: '/pomodoro', icon: 'T', labelKey: 'pomodoro.title', descKey: 'pomodoro.desc', color: 'bg-red-50 text-red-600' },
+  { path: '/coin', icon: '$', labelKey: 'coin.title', descKey: 'coin.desc', color: 'bg-yellow-50 text-yellow-600' },
+  { path: '/jwt', icon: 'J', labelKey: 'jwt.title', descKey: 'jwt.desc', color: 'bg-violet-50 text-violet-600' },
 ]
 
 export default function Home() {
