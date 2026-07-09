@@ -1,26 +1,72 @@
-import { Outlet, NavLink } from 'react-router-dom'
+import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 
-const categories = [
-  { key: 'nav.video', path: '/category/video' },
-  { key: 'nav.audio', path: '/category/audio' },
-  { key: 'nav.image', path: '/category/image' },
-  { key: 'nav.docProcess', path: '/category/doc-process' },
-  { key: 'nav.docConvert', path: '/category/doc-convert' },
-  { key: 'nav.chart', path: '/category/chart' },
-  { key: 'nav.office', path: '/category/office' },
-  { key: 'nav.text', path: '/category/text' },
-  { key: 'nav.number', path: '/category/number' },
-  { key: 'nav.encrypt', path: '/category/encrypt' },
-  { key: 'nav.unit', path: '/category/unit' },
+const allTools = [
+  { path: '/json', label: 'JSON 格式化' },
+  { path: '/base64', label: 'Base64 编解码' },
+  { path: '/url', label: 'URL 编解码' },
+  { path: '/hash', label: '哈希生成' },
+  { path: '/jwt', label: 'JWT 解析' },
+  { path: '/regex', label: '正则表达式测试' },
+  { path: '/password', label: '密码生成器' },
+  { path: '/wordcount', label: '字数统计' },
+  { path: '/case', label: '大小写转换' },
+  { path: '/diff', label: '文本对比' },
+  { path: '/textreplace', label: '文本替换' },
+  { path: '/textreverse', label: '文本反转' },
+  { path: '/removeempty', label: '删除空行' },
+  { path: '/extract', label: '文本提取' },
+  { path: '/wordfreq', label: '词频统计' },
+  { path: '/unicode', label: 'Unicode 转换' },
+  { path: '/morse', label: '摩尔斯电码' },
+  { path: '/textsplit', label: '文本分割合并' },
+  { path: '/markdown', label: 'Markdown 预览' },
+  { path: '/timestamp', label: '时间戳转换' },
+  { path: '/numberbase', label: '进制转换' },
+  { path: '/random', label: '随机数生成' },
+  { path: '/roman', label: '罗马数字' },
+  { path: '/color', label: '颜色转换' },
+  { path: '/colorpicker', label: '颜色吸取器' },
+  { path: '/qrcode', label: '二维码生成' },
+  { path: '/unit', label: '单位转换' },
+  { path: '/pomodoro', label: '番茄钟' },
+  { path: '/coin', label: '随机决策' },
+  { path: '/imgcompress', label: '图片压缩' },
+  { path: '/imgbase64', label: '图片 Base64' },
+  { path: '/drawboard', label: '在线画板' },
+  { path: '/imgresize', label: '图片裁切缩放' },
+  { path: '/imgfilter', label: '图片滤镜' },
+  { path: '/csvjson', label: 'CSV/JSON 转换' },
+  { path: '/barchart', label: '柱状图' },
+  { path: '/piechart', label: '饼图' },
+  { path: '/linechart', label: '折线图' },
 ]
 
 export default function Layout() {
   const { i18n, t } = useTranslation()
+  const navigate = useNavigate()
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [rankOpen, setRankOpen] = useState(false)
-  const [catOpen, setCatOpen] = useState(true)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState<typeof allTools>([])
+
+  const handleSearch = (value: string) => {
+    setSearchQuery(value)
+    if (value.trim()) {
+      const results = allTools.filter((tool) =>
+        tool.label.toLowerCase().includes(value.toLowerCase())
+      )
+      setSearchResults(results)
+    } else {
+      setSearchResults([])
+    }
+  }
+
+  const handleSelectTool = (path: string) => {
+    navigate(path)
+    setSearchQuery('')
+    setSearchResults([])
+  }
 
   const toggleLang = () => {
     const newLang = i18n.language === 'zh' ? 'en' : 'zh'
@@ -32,8 +78,8 @@ export default function Layout() {
     <div className="min-h-screen bg-[#f5f7fa]">
       {/* Sidebar */}
       <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <div className="sidebar-logo" onClick={() => setSidebarOpen(!sidebarOpen)}>
-          <svg viewBox="0 0 48 48" fill="none">
+        <div className="sidebar-logo">
+          <svg viewBox="0 0 48 48" fill="none" width="26" height="26">
             <path d="M8 10.5H40" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M24 19.5H40" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M24 28.5H40" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -43,88 +89,76 @@ export default function Layout() {
         </div>
 
         <nav className="sidebar-menu">
-          {/* Home */}
           <NavLink to="/" end className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none">
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
               <path d="M9 18V42H39V18L24 6L9 18Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M19 29V42H29V29H19Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
             </svg>
             <span>{t('nav.home')}</span>
           </NavLink>
 
-          {/* Rankings */}
-          <div className="menu-submenu">
-            <div className="submenu-title" onClick={() => setRankOpen(!rankOpen)}>
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M17 18H4V42H17V18Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M30 6H17V42H30V6Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-                <path d="M43 26H30V42H43V26Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>{t('nav.rankings')}</span>
-              <svg className={`arrow ${rankOpen ? 'open' : ''}`} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 9l6 6 6-6"/>
-              </svg>
-            </div>
-            {rankOpen && (
-              <div className="submenu-list" style={{ position: 'absolute', left: '100%', top: 0, zIndex: 100 }}>
-                <a href="/rank/new">{t('nav.rankNew')}</a>
-                <a href="/rank/hot">{t('nav.rankHot')}</a>
-              </div>
-            )}
-          </div>
-
-          {/* Categories */}
-          <div className="menu-submenu">
-            <div className="submenu-title" onClick={() => setCatOpen(!catOpen)}>
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M18 6H8C6.89543 6 6 6.89543 6 8V18C6 19.1046 6.89543 20 8 20H18C19.1046 20 20 19.1046 20 18V8C20 6.89543 19.1046 6 18 6Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-                <path d="M18 28H8C6.89543 28 6 28.8954 6 30V40C6 41.1046 6.89543 42 8 42H18C19.1046 42 20 41.1046 20 40V30C20 28.8954 19.1046 28 18 28Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-                <path d="M40 6H30C28.8954 6 28 6.89543 28 8V18C28 19.1046 28.8954 20 30 20H40C41.1046 20 42 19.1046 42 18V8C42 6.89543 41.1046 6 40 6Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-                <path d="M40 28H30C28.8954 28 28 28.8954 28 30V40C28 41.1046 28.8954 42 30 42H40C41.1046 42 42 41.1046 42 40V30C42 28.8954 41.1046 28 40 28Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-              </svg>
-              <span>{t('nav.categories')}</span>
-              <svg className={`arrow ${catOpen ? 'open' : ''}`} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 9l6 6 6-6"/>
-              </svg>
-            </div>
-            {catOpen && (
-              <div className="submenu-list" style={{ position: 'absolute', left: '100%', top: 0, zIndex: 100, maxHeight: '400px', overflowY: 'auto' }}>
-                {categories.map((cat) => (
-                  <NavLink key={cat.key} to={cat.path} className={({ isActive }) => isActive ? 'text-blue-500' : ''}>
-                    {t(cat.key)}
-                  </NavLink>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Favorites */}
-          <a href="/favorites" className="menu-item">
-            <svg viewBox="0 0 48 48" fill="none">
-              <path d="M15 8C8.92487 8 4 12.9249 4 19C4 30 17 40 24 42.3262C31 40 44 30 44 19C44 12.9249 39.0751 8 33 8C29.2797 8 25.9907 9.8469 24 12.6738C22.0093 9.8469 18.7203 8 15 8Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          <NavLink to="/category/text" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <path d="M12 6H36V12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M24 12V42" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M18 42H30" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
             </svg>
-            <span>{t('nav.favorites')}</span>
-          </a>
+            <span>{t('nav.text')}</span>
+          </NavLink>
 
-          {/* Pricing */}
-          <a href="/pricing" className="menu-item">
-            <svg viewBox="0 0 48 48" fill="none">
-              <path d="M4.50326 16.3661L12.5158 7.67177C12.909 7.2452 13.4807 7 14.0821 7H33.9179C34.5193 7 35.091 7.2452 35.4842 7.67177L43.4967 16.3661C44.1809 17.1084 44.1659 18.2125 43.4618 18.9383L24.7499 40.1499C24.3518 40.6012 23.6482 40.6012 23.2501 40.1499L4.5382 18.9383C3.83415 18.2125 3.81915 17.1084 4.50326 16.3661Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M16 20L24 29L32 20" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          <NavLink to="/category/number" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <path d="M17 18H4V42H17V18Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M30 6H17V42H30V6Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
+              <path d="M43 26H30V42H43V26Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span>{t('nav.pricing')}</span>
-          </a>
+            <span>{t('nav.number')}</span>
+          </NavLink>
 
-          {/* Client */}
-          <a href="#" className="menu-item">
-            <svg viewBox="0 0 48 48" fill="none">
-              <rect x="19" y="32" width="10" height="9" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <rect x="5" y="8" width="38" height="24" rx="2" fill="none" stroke="currentColor" strokeWidth="3"/>
-              <path d="M22 27H26" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M14 41L34 41" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          <NavLink to="/category/encrypt" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <rect x="8" y="20" width="32" height="22" rx="2" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
+              <path d="M16 20V14C16 9.58172 19.5817 6 24 6C28.4183 6 32 9.58172 32 14V20" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
             </svg>
-            <span>{t('nav.client')}</span>
-          </a>
+            <span>{t('nav.encrypt')}</span>
+          </NavLink>
+
+          <NavLink to="/category/image" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <rect x="6" y="8" width="36" height="32" rx="2" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
+              <circle cx="17" cy="19" r="4" stroke="currentColor" strokeWidth="3"/>
+              <path d="M6 32L16 24L24 30L34 20L42 28" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span>{t('nav.image')}</span>
+          </NavLink>
+
+          <NavLink to="/category/chart" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <path d="M6 42V22H14V42H6Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M18 42V12H26V42H18Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M30 42V6H38V42H30Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span>{t('nav.chart')}</span>
+          </NavLink>
+
+          <NavLink to="/category/office" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <rect x="6" y="6" width="36" height="36" rx="2" stroke="currentColor" strokeWidth="3"/>
+              <path d="M6 16H42" stroke="currentColor" strokeWidth="3"/>
+              <path d="M16 6V16" stroke="currentColor" strokeWidth="3"/>
+              <path d="M32 6V16" stroke="currentColor" strokeWidth="3"/>
+            </svg>
+            <span>{t('nav.office')}</span>
+          </NavLink>
+
+          <NavLink to="/category/unit" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
+            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+              <path d="M6 6H42V42H6V6Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
+              <path d="M6 18H42" stroke="currentColor" strokeWidth="3"/>
+              <path d="M18 18V42" stroke="currentColor" strokeWidth="3"/>
+            </svg>
+            <span>{t('nav.unit')}</span>
+          </NavLink>
         </nav>
       </aside>
 
@@ -133,28 +167,46 @@ export default function Layout() {
         {/* Header */}
         <header className="main-header">
           <div className="header-left">
-            <div className="search-box">
-              <input type="text" placeholder={t('nav.search')} />
+            <div className="search-box" style={{ position: 'relative' }}>
+              <input
+                type="text"
+                placeholder={t('nav.search')}
+                value={searchQuery}
+                onChange={(e) => handleSearch(e.target.value)}
+              />
+              {searchResults.length > 0 && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  right: 0,
+                  background: '#fff',
+                  borderRadius: '4px',
+                  boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
+                  maxHeight: '300px',
+                  overflowY: 'auto',
+                  zIndex: 1000,
+                  marginTop: '5px',
+                }}>
+                  {searchResults.map((tool) => (
+                    <div
+                      key={tool.path}
+                      onClick={() => handleSelectTool(tool.path)}
+                      style={{
+                        padding: '10px 15px',
+                        cursor: 'pointer',
+                        fontSize: '14px',
+                        borderBottom: '1px solid #ebeef5',
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = '#f5f7fa')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = '#fff')}
+                    >
+                      {tool.label}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
-
-          <div className="header-center">
-            <a href="/pricing" className="tag-btn danger">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M4.50326 16.3661L12.5158 7.67177C12.909 7.2452 13.4807 7 14.0821 7H33.9179C34.5193 7 35.091 7.2452 35.4842 7.67177L43.4967 16.3661C44.1809 17.1084 44.1659 18.2125 43.4618 18.9383L24.7499 40.1499C24.3518 40.6012 23.6482 40.6012 23.2501 40.1499L4.5382 18.9383C3.83415 18.2125 3.81915 17.1084 4.50326 16.3661Z" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M16 20L24 29L32 20" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              &nbsp;{t('nav.member')}
-            </a>
-            <a href="#" className="tag-btn danger">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect x="19" y="32" width="10" height="9" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <rect x="5" y="8" width="38" height="24" rx="2" fill="none" stroke="#fff" strokeWidth="3"/>
-                <path d="M22 27H26" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M14 41L34 41" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              &nbsp;{t('nav.download')}
-            </a>
           </div>
 
           <div className="header-right">
