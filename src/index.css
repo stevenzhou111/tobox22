@@ -564,10 +564,89 @@ textarea.input-field {
   }
 
   .search-box {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
   }
 
   .tool-grid {
     grid-template-columns: 1fr;
   }
+
+  .main-header {
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .banner-title {
+    font-size: 16px;
+  }
+
+  .banner-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stat-card .text p:first-child {
+    font-size: 20px;
+  }
+
+  .tool-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .tool-card .card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .tool-card .card-info h4 {
+    font-size: 14px;
+  }
+
+  .tool-card .card-info p {
+    font-size: 12px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tool-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Line clamp utility */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

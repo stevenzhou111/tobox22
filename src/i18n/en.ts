@@ -801,7 +801,11 @@ export default {
   },
   software: {
     title: 'Essential Software',
-    desc: 'Recommended software downloads for developers',
+    desc: 'Developer software downloads, constantly updated',
+    all: 'All',
+    searchPlaceholder: 'Search software name or description...',
+    noResult: 'No software found',
+    total: '{{count}} software in total',
   },
   hexcolor: {
     title: 'HEX / RGB Converter',

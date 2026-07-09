@@ -801,7 +801,11 @@ export default {
   },
   software: {
     title: '电脑必备软件',
-    desc: '推荐的开发者常用软件下载地址',
+    desc: '开发者常用软件下载地址，持续更新中',
+    all: '全部',
+    searchPlaceholder: '搜索软件名称或描述...',
+    noResult: '未找到相关软件',
+    total: '共 {{count}} 个软件',
   },
   hexcolor: {
     title: 'HEX / RGB 转换',
