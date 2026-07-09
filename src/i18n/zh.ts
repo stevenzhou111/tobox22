@@ -1,7 +1,6 @@
 export default {
   title: '在线工具箱',
-  subtitle: '开发者常用工具集合',
-  home: '首页',
+  subtitle: '安全、快捷、好用的在线工具集合',
   tools: '工具',
   language: '语言',
   switchLang: 'English',
@@ -18,6 +17,22 @@ export default {
   convert: '转换',
   generate: '生成',
   reset: '重置',
+  nav: {
+    categories: {
+      dev: '开发工具',
+      text: '文本工具',
+      number: '数字工具',
+      utils: '实用工具',
+    },
+  },
+  home: {
+    cat: {
+      dev: '开发工具',
+      text: '文本工具',
+      number: '数字工具',
+      utils: '实用工具',
+    },
+  },
   json: {
     title: 'JSON 格式化/校验',
     desc: '格式化、压缩、校验 JSON 数据',

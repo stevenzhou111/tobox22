@@ -1,7 +1,6 @@
 export default {
   title: 'Dev Toolbox',
-  subtitle: 'Essential Developer Tools',
-  home: 'Home',
+  subtitle: 'Safe, fast, and easy-to-use online tools',
   tools: 'Tools',
   language: 'Language',
   switchLang: '中文',
@@ -18,6 +17,22 @@ export default {
   convert: 'Convert',
   generate: 'Generate',
   reset: 'Reset',
+  nav: {
+    categories: {
+      dev: 'Dev Tools',
+      text: 'Text Tools',
+      number: 'Number Tools',
+      utils: 'Utilities',
+    },
+  },
+  home: {
+    cat: {
+      dev: 'Dev Tools',
+      text: 'Text Tools',
+      number: 'Number Tools',
+      utils: 'Utilities',
+    },
+  },
   json: {
     title: 'JSON Formatter',
     desc: 'Format, compress, and validate JSON data',
