@@ -73,14 +73,14 @@ const allTools: Tool[] = [
   { path: '/unit', icon: 'U', labelKey: 'unit.title', descKey: 'unit.desc', color: '#ff9800', category: 'unit' },
 ]
 
-const categoryInfo: Record<string, { label: string; color: string }> = {
-  text: { label: '文本工具', color: '#1abc9c' },
-  number: { label: '数字工具', color: '#9b59b6' },
-  encrypt: { label: '加密工具', color: '#4caf50' },
-  image: { label: '图片工具', color: '#00bcd4' },
-  chart: { label: '数据图表', color: '#2196f3' },
-  office: { label: '办公辅助', color: '#e91e63' },
-  unit: { label: '单位转换', color: '#ff9800' },
+const categoryInfo: Record<string, { labelKey: string; color: string }> = {
+  text: { labelKey: 'home.text', color: '#1abc9c' },
+  number: { labelKey: 'home.number', color: '#9b59b6' },
+  encrypt: { labelKey: 'home.encrypt', color: '#4caf50' },
+  image: { labelKey: 'home.image', color: '#00bcd4' },
+  chart: { labelKey: 'home.chart', color: '#2196f3' },
+  office: { labelKey: 'home.office', color: '#e91e63' },
+  unit: { labelKey: 'home.unit', color: '#ff9800' },
 }
 
 export default function CategoryPage() {
@@ -88,13 +88,13 @@ export default function CategoryPage() {
   const { t } = useTranslation()
 
   const categoryTools = allTools.filter((tool) => tool.category === id)
-  const info = categoryInfo[id || ''] || { label: '工具', color: '#409eff' }
+  const info = categoryInfo[id || ''] || { labelKey: 'home.featured', color: '#409eff' }
 
   return (
     <div>
       <div className="tool-section">
         <div className="section-header">
-          <h3 style={{ color: info.color }}>{info.label}</h3>
+          <h3 style={{ color: info.color }}>{t(info.labelKey)}</h3>
           <span style={{ color: '#909399', fontSize: '14px' }}>共 {categoryTools.length} 个工具</span>
         </div>
         <div className="tool-grid">

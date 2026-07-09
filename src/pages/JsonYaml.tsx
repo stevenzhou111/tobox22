@@ -44,7 +44,6 @@ export default function JsonYaml() {
     try {
       const lines = yaml.split('\n')
       const result: any = {}
-      let currentKey = ''
       lines.forEach((line) => {
         const match = line.match(/^(\s*)([\w-]+):\s*(.*)$/)
         if (match) {
@@ -52,7 +51,6 @@ export default function JsonYaml() {
           if (val) {
             try { result[key] = JSON.parse(val) } catch { result[key] = val }
           } else {
-            currentKey = key
             result[key] = {}
           }
         }

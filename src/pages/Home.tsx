@@ -119,7 +119,7 @@ export default function Home() {
             </svg>
           </div>
           <div className="text">
-            <p>1000+</p>
+            <p>10K+</p>
             <p>{t('home.usageCount')}</p>
           </div>
         </div>

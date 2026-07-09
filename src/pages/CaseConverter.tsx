@@ -10,7 +10,7 @@ export default function CaseConverter() {
     { label: t('case.lowercase'), fn: (s: string) => s.toLowerCase() },
     { label: t('case.titlecase'), fn: (s: string) => s.replace(/\w\S*/g, (w) => w.replace(/^\w/, (c) => c.toUpperCase())) },
     { label: t('case.sentencecase'), fn: (s: string) => s.replace(/(^\s*\w|[.!?]\s+\w)/g, (c) => c.toUpperCase()) },
-    { label: t('case.invertcase'), fn: (s: string) => s.split('').map((c) => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())).join('') },
+    { label: t('case.invertcase'), fn: (s: string) => s.split('').reverse().join('') },
     { label: t('case.togglecase'), fn: (s: string) => s.split('').map((c) => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())).join('') },
   ]
 

@@ -6,7 +6,7 @@ export default function HashGenerator() {
   const [text, setText] = useState('')
   const [results, setResults] = useState<Record<string, string>>({})
 
-  const algorithms = ['MD5', 'SHA-1', 'SHA-256', 'SHA-384', 'SHA-512']
+  const algorithms = ['SHA-1', 'SHA-256', 'SHA-384', 'SHA-512']
 
   const generateHashes = async () => {
     const encoder = new TextEncoder()
@@ -15,7 +15,7 @@ export default function HashGenerator() {
 
     for (const algo of algorithms) {
       try {
-        const hashBuffer = await crypto.subtle.digest(algo.replace('-', ''), data)
+        const hashBuffer = await crypto.subtle.digest(algo, data)
         const hashArray = Array.from(new Uint8Array(hashBuffer))
         newResults[algo] = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('')
       } catch {

@@ -10,19 +10,22 @@ export default function Pomodoro() {
   const [isBreak, setIsBreak] = useState(false)
   const [sessions, setSessions] = useState(0)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const isBreakRef = useRef(isBreak)
+
+  useEffect(() => {
+    isBreakRef.current = isBreak
+  }, [isBreak])
 
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
         setSeconds((prev) => {
           if (prev <= 1) {
-            if (isBreak) {
+            if (isBreakRef.current) {
               setIsBreak(false)
-              setSeconds(workMin * 60)
             } else {
               setSessions((s) => s + 1)
               setIsBreak(true)
-              setSeconds(breakMin * 60)
             }
             return 0
           }
@@ -33,7 +36,13 @@ export default function Pomodoro() {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }
-  }, [isRunning, isBreak, workMin, breakMin])
+  }, [isRunning])
+
+  useEffect(() => {
+    if (!isRunning) {
+      setSeconds(isBreak ? breakMin * 60 : workMin * 60)
+    }
+  }, [workMin, breakMin, isBreak, isRunning])
 
   const reset = () => {
     setIsRunning(false)
@@ -87,7 +96,7 @@ export default function Pomodoro() {
         <div className="grid grid-cols-2 gap-4 text-left">
           <div>
             <label className="block text-sm text-gray-500 mb-1">{t('pomodoro.workTime')}</label>
-            <input type="number" className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400" value={workMin} onChange={(e) => { setWorkMin(Number(e.target.value)); if (!isRunning && !isBreak) setSeconds(Number(e.target.value) * 60) }} min="1" max="60" />
+            <input type="number" className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400" value={workMin} onChange={(e) => setWorkMin(Number(e.target.value))} min="1" max="60" />
           </div>
           <div>
             <label className="block text-sm text-gray-500 mb-1">{t('pomodoro.breakTime')}</label>
