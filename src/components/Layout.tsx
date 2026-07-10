@@ -41,6 +41,20 @@ const allTools = [
   { path: '/barchart', label: '柱状图' },
   { path: '/piechart', label: '饼图' },
   { path: '/linechart', label: '折线图' },
+  { path: '/software', label: '电脑必备软件' },
+]
+
+const navItems = [
+  { path: '/', labelKey: 'nav.home', icon: 'M9 18V42H39V18L24 6L9 18Z M19 29V42H29V29H19Z M9 42H39' },
+  { path: '/category/text', labelKey: 'nav.text', icon: 'M12 6H36V12 M24 12V42 M18 42H30' },
+  { path: '/category/number', labelKey: 'nav.number', icon: 'M17 18H4V42H17V18Z M30 6H17V42H30V6Z M43 26H30V42H43V26Z' },
+  { path: '/category/encrypt', labelKey: 'nav.encrypt', icon: 'M8 20V42H40V20H8Z M16 20V14C16 9.6 19.6 6 24 6C28.4 6 32 9.6 32 14V20' },
+  { path: '/category/image', labelKey: 'nav.image', icon: 'M6 8H42V40H6V8Z M17 19C19.2 19 21 17.2 21 15S19.2 11 17 11 13 12.8 13 15 14.8 19 17 19Z M6 32L16 24L24 30L34 20L42 28' },
+  { path: '/category/chart', labelKey: 'nav.chart', icon: 'M6 42V22H14V42H6Z M18 42V12H26V42H18Z M30 42V6H38V42H30Z' },
+  { path: '/category/office', labelKey: 'nav.office', icon: 'M6 6H42V42H6V6Z M6 16H42 M16 6V16 M32 6V16' },
+  { path: '/category/unit', labelKey: 'nav.unit', icon: 'M6 6H42V42H6V6Z M6 18H42 M18 18V42' },
+  { path: '/category/dev', labelKey: 'nav.dev', icon: 'M16 6L4 18L16 30 M32 6L44 18L32 30 M28 4L20 44' },
+  { path: '/category/software', labelKey: 'nav.software', icon: 'M6 10H42V38H6V10Z M6 18H42 M12 14A1.5 1.5 0 1 0 12 17A1.5 1.5 0 1 0 12 14Z M17 14A1.5 1.5 0 1 0 17 17A1.5 1.5 0 1 0 17 14Z M22 14A1.5 1.5 0 1 0 22 17A1.5 1.5 0 1 0 22 14Z' },
 ]
 
 export default function Layout() {
@@ -66,6 +80,7 @@ export default function Layout() {
     navigate(path)
     setSearchQuery('')
     setSearchResults([])
+    setSidebarOpen(false)
   }
 
   const toggleLang = () => {
@@ -79,97 +94,33 @@ export default function Layout() {
       {/* Sidebar */}
       <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
-          <svg viewBox="0 0 48 48" fill="none" width="26" height="26">
-            <path d="M8 10.5H40" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M24 19.5H40" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M24 28.5H40" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M8 37.5H40" stroke="#444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M16 19L8 24L16 29V19Z" fill="none" stroke="#444" strokeWidth="2" strokeLinejoin="round"/>
-          </svg>
+          <NavLink to="/" className="flex items-center gap-2" onClick={() => setSidebarOpen(false)}>
+            <svg viewBox="0 0 48 48" fill="none" width="26" height="26">
+              <path d="M8 10.5H40" stroke="#409eff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M24 19.5H40" stroke="#409eff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M24 28.5H40" stroke="#409eff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M8 37.5H40" stroke="#409eff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M16 19L8 24L16 29V19Z" fill="#409eff" stroke="#409eff" strokeWidth="2" strokeLinejoin="round"/>
+            </svg>
+            <span className="font-bold text-[#303133] text-lg hidden sm:block">{t('title')}</span>
+          </NavLink>
         </div>
 
         <nav className="sidebar-menu">
-          <NavLink to="/" end className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <path d="M9 18V42H39V18L24 6L9 18Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M19 29V42H29V29H19Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-            </svg>
-            <span>{t('nav.home')}</span>
-          </NavLink>
-
-          <NavLink to="/category/text" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <path d="M12 6H36V12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M24 12V42" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-              <path d="M18 42H30" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-            </svg>
-            <span>{t('nav.text')}</span>
-          </NavLink>
-
-          <NavLink to="/category/number" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <path d="M17 18H4V42H17V18Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M30 6H17V42H30V6Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-              <path d="M43 26H30V42H43V26Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span>{t('nav.number')}</span>
-          </NavLink>
-
-          <NavLink to="/category/encrypt" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <rect x="8" y="20" width="32" height="22" rx="2" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-              <path d="M16 20V14C16 9.58172 19.5817 6 24 6C28.4183 6 32 9.58172 32 14V20" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-            </svg>
-            <span>{t('nav.encrypt')}</span>
-          </NavLink>
-
-          <NavLink to="/category/image" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <rect x="6" y="8" width="36" height="32" rx="2" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-              <circle cx="17" cy="19" r="4" stroke="currentColor" strokeWidth="3"/>
-              <path d="M6 32L16 24L24 30L34 20L42 28" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span>{t('nav.image')}</span>
-          </NavLink>
-
-          <NavLink to="/category/chart" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <path d="M6 42V22H14V42H6Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M18 42V12H26V42H18Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M30 42V6H38V42H30Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span>{t('nav.chart')}</span>
-          </NavLink>
-
-          <NavLink to="/category/office" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <rect x="6" y="6" width="36" height="36" rx="2" stroke="currentColor" strokeWidth="3"/>
-              <path d="M6 16H42" stroke="currentColor" strokeWidth="3"/>
-              <path d="M16 6V16" stroke="currentColor" strokeWidth="3"/>
-              <path d="M32 6V16" stroke="currentColor" strokeWidth="3"/>
-            </svg>
-            <span>{t('nav.office')}</span>
-          </NavLink>
-
-          <NavLink to="/category/unit" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <path d="M6 6H42V42H6V6Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
-              <path d="M6 18H42" stroke="currentColor" strokeWidth="3"/>
-              <path d="M18 18V42" stroke="currentColor" strokeWidth="3"/>
-            </svg>
-            <span>{t('nav.unit')}</span>
-          </NavLink>
-
-          <NavLink to="/category/software" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}>
-            <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
-              <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" strokeWidth="3"/>
-              <path d="M6 18H42" stroke="currentColor" strokeWidth="3"/>
-              <circle cx="12" cy="14" r="1.5" fill="currentColor"/>
-              <circle cx="17" cy="14" r="1.5" fill="currentColor"/>
-              <circle cx="22" cy="14" r="1.5" fill="currentColor"/>
-            </svg>
-            <span>{t('nav.software')}</span>
-          </NavLink>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              end={item.path === '/'}
+              className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
+              onClick={() => setSidebarOpen(false)}
+            >
+              <svg viewBox="0 0 48 48" fill="none" width="20" height="20">
+                <path d={item.icon} stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span>{t(item.labelKey)}</span>
+            </NavLink>
+          ))}
         </nav>
       </aside>
 
@@ -177,6 +128,27 @@ export default function Layout() {
       <div className="main-wrapper">
         {/* Header */}
         <header className="main-header">
+          {/* Mobile menu button */}
+          <button
+            className="lg:hidden p-2 mr-2 rounded-lg hover:bg-gray-100"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              {sidebarOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="12" x2="21" y2="12"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <line x1="3" y1="18" x2="21" y2="18"/>
+                </>
+              )}
+            </svg>
+          </button>
+
           <div className="header-left">
             <div className="search-box" style={{ position: 'relative' }}>
               <input
@@ -192,22 +164,23 @@ export default function Layout() {
                   left: 0,
                   right: 0,
                   background: '#fff',
-                  borderRadius: '4px',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.12)',
                   maxHeight: '300px',
                   overflowY: 'auto',
                   zIndex: 1000,
-                  marginTop: '5px',
+                  marginTop: '8px',
                 }}>
                   {searchResults.map((tool) => (
                     <div
                       key={tool.path}
                       onClick={() => handleSelectTool(tool.path)}
                       style={{
-                        padding: '10px 15px',
+                        padding: '12px 16px',
                         cursor: 'pointer',
                         fontSize: '14px',
-                        borderBottom: '1px solid #ebeef5',
+                        borderBottom: '1px solid #f5f7fa',
+                        transition: 'background 0.2s',
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.background = '#f5f7fa')}
                       onMouseLeave={(e) => (e.currentTarget.style.background = '#fff')}
@@ -221,7 +194,7 @@ export default function Layout() {
           </div>
 
           <div className="header-right">
-            <button onClick={toggleLang} className="px-3 py-1.5 text-sm border border-gray-200 rounded hover:bg-gray-50">
+            <button onClick={toggleLang} className="px-3 py-1.5 text-sm border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
               {t('switchLang')}
             </button>
           </div>
@@ -235,7 +208,10 @@ export default function Layout() {
 
       {/* Mobile overlay */}
       {sidebarOpen && (
-        <div className="fixed inset-0 bg-black/50 z-90 lg:hidden" onClick={() => setSidebarOpen(false)} />
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity"
+          onClick={() => setSidebarOpen(false)}
+        />
       )}
     </div>
   )

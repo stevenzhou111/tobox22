@@ -24,6 +24,7 @@ export default {
     chart: 'Charts',
     office: 'Office Tools',
     unit: 'Unit Converter',
+    dev: 'Dev Tools',
     software: 'Essential Software',
     search: 'Search tools...',
   },
