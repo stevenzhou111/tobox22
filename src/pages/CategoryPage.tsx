@@ -142,9 +142,6 @@ const allTools: Tool[] = [
   { path: '/software', icon: 'SW', labelKey: 'software.title', descKey: 'software.desc', color: '#409eff', category: 'software' },
 ]
 
-// 添加开发工具分类
-categoryInfo['dev'] = { labelKey: 'home.dev', color: '#409eff' }
-
 const categoryInfo: Record<string, { labelKey: string; color: string }> = {
   text: { labelKey: 'home.text', color: '#1abc9c' },
   number: { labelKey: 'home.number', color: '#9b59b6' },
@@ -153,6 +150,7 @@ const categoryInfo: Record<string, { labelKey: string; color: string }> = {
   chart: { labelKey: 'home.chart', color: '#2196f3' },
   office: { labelKey: 'home.office', color: '#e91e63' },
   unit: { labelKey: 'home.calc', color: '#ff9800' },
+  dev: { labelKey: 'home.dev', color: '#409eff' },
   software: { labelKey: 'home.software', color: '#409eff' },
 }
 
