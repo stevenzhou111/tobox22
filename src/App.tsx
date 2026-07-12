@@ -103,6 +103,12 @@ const HttpStatusCodes = lazy(() => import('./pages/HttpStatusCodes'))
 const ColorContrast = lazy(() => import('./pages/ColorContrast'))
 const MetaTagGenerator = lazy(() => import('./pages/MetaTagGenerator'))
 const SqlFormatter = lazy(() => import('./pages/SqlFormatter'))
+const ImageFormatConverter = lazy(() => import('./pages/ImageFormatConverter'))
+const ImageWatermark = lazy(() => import('./pages/ImageWatermark'))
+const DateTimeCalculator = lazy(() => import('./pages/DateTimeCalculator'))
+const PlaceholderImage = lazy(() => import('./pages/PlaceholderImage'))
+const FontPreview = lazy(() => import('./pages/FontPreview'))
+const DiceRoller = lazy(() => import('./pages/DiceRoller'))
 
 function Loading() {
   return (
@@ -218,6 +224,12 @@ export default function App() {
           <Route path="/contrast" element={<ColorContrast />} />
           <Route path="/metatag" element={<MetaTagGenerator />} />
           <Route path="/sqlformat" element={<SqlFormatter />} />
+          <Route path="/imgformat" element={<ImageFormatConverter />} />
+          <Route path="/imgwatermark" element={<ImageWatermark />} />
+          <Route path="/datecalc" element={<DateTimeCalculator />} />
+          <Route path="/placeholder" element={<PlaceholderImage />} />
+          <Route path="/fontpreview" element={<FontPreview />} />
+          <Route path="/dice" element={<DiceRoller />} />
         </Route>
       </Routes>
     </Suspense>

@@ -138,6 +138,16 @@ const allTools: Tool[] = [
   { path: '/sqlformat', icon: 'SQ', labelKey: 'sqlformat.title', descKey: 'sqlformat.desc', color: '#2196f3', category: 'dev' },
   { path: '/contrast', icon: 'CC', labelKey: 'contrast.title', descKey: 'contrast.desc', color: '#9c27b0', category: 'image' },
 
+  // 更多图片工具
+  { path: '/imgformat', icon: 'IF', labelKey: 'imgformat.title', descKey: 'imgformat.desc', color: '#00bcd4', category: 'image' },
+  { path: '/imgwatermark', icon: 'IW', labelKey: 'imgwatermark.title', descKey: 'imgwatermark.desc', color: '#9c27b0', category: 'image' },
+
+  // 更多实用工具
+  { path: '/datecalc', icon: 'DC', labelKey: 'datecalc.title', descKey: 'datecalc.desc', color: '#ff9800', category: 'calc' },
+  { path: '/placeholder', icon: 'PI', labelKey: 'placeholder.title', descKey: 'placeholder.desc', color: '#607d8b', category: 'office' },
+  { path: '/fontpreview', icon: 'FP', labelKey: 'fontpreview.title', descKey: 'fontpreview.desc', color: '#795548', category: 'office' },
+  { path: '/dice', icon: 'D6', labelKey: 'dice.title', descKey: 'dice.desc', color: '#e91e63', category: 'office' },
+
   // 软件下载
   { path: '/software', icon: 'SW', labelKey: 'software.title', descKey: 'software.desc', color: '#409eff', category: 'software' },
 ]
